@@ -10,6 +10,8 @@ import { ConfiguracoesComponent } from './pages/configuracoes/configuracoes.comp
 import { ComodoComponent } from './pages/comodo/comodo.component';
 import { InformacoesGeraisComponent } from './pages/informacoes-gerais/informacoes-gerais.component';
 import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
+import { NavComponent } from './components/nav/nav.component';
+import { NavModule } from './components/nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,12 @@ import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
     MenuPrincipalComponent,
     ConfiguracoesComponent,
     ComodoComponent,
-    InformacoesGeraisComponent
+    InformacoesGeraisComponent,
   ],
   imports: [
     BrowserModule,
     AppRountingModule,
+    NavModule,
     TelaInicialModule
   ],
   providers: [],
