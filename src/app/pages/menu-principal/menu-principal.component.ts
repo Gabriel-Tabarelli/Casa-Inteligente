@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faBed, faKitchenSet, faGear } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-menu-principal',
@@ -11,5 +13,9 @@ export class MenuPrincipalComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  faBed = faBed;
+  faKitchenSet = faKitchenSet;
+  faGear = faGear;
 
 }

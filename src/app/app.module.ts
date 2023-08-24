@@ -1,3 +1,4 @@
+import { MenuPrincipalModule } from './pages/menu-principal/menu-principal.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRountingModule } from "./app-routing.module";
@@ -16,7 +17,6 @@ import { NavModule } from './components/nav/nav.module';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuPrincipalComponent,
     ConfiguracoesComponent,
     ComodoComponent,
     InformacoesGeraisComponent,
@@ -25,7 +25,8 @@ import { NavModule } from './components/nav/nav.module';
     BrowserModule,
     AppRountingModule,
     NavModule,
-    TelaInicialModule
+    TelaInicialModule,
+    MenuPrincipalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

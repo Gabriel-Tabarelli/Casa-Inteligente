@@ -4,10 +4,12 @@
 @tailwind utilities;
 
 
+
 *{
     margin: 0;
     padding: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    max-width: 100%;
+    font-family: 'Manrope', sans-serif;
 }
 .mat-icon {
     color: #1D425C;
