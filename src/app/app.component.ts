@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faBed, faKitchenSet, faGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,7 @@ export class AppComponent implements OnInit{
     
   }
   title = 'casa-inteligente';
-
+  faBed = faBed;
+  faKitchenSet = faKitchenSet;
+  faGear = faGear;
 }

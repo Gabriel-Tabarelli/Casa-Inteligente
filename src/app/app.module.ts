@@ -13,6 +13,8 @@ import { InformacoesGeraisComponent } from './pages/informacoes-gerais/informaco
 import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
 import { NavComponent } from './components/nav/nav.component';
 import { NavModule } from './components/nav/nav.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NavModule } from './components/nav/nav.module';
     AppRountingModule,
     NavModule,
     TelaInicialModule,
-    MenuPrincipalModule
+    MenuPrincipalModule,
+    FontAwesomeModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
