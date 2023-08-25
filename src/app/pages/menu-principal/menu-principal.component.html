@@ -1,8 +1,8 @@
 <section class="flex h-full w-screen bg-white">
     <div class="flex w-full h-full justify-center">
-        <div class="grid grid-rows-2 h-full w-full justify-center">
+        <div class="grid grid-rows-custom h-full w-full justify-center">
             <div class="grid-span-1 flex w-full flex-col">
-                <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
+                <div class="border-b-2 h-1/6 w-5/6 border-corPrimaria">
                     <h3>Informações Gerais</h3>
                 </div>
                 <div class="grid grid-cols-2 w-full h-5/6">
@@ -16,11 +16,11 @@
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         Gás
-                        <mat-progress-bar color mode="determinate" value="85"></mat-progress-bar>
+                        <mat-progress-bar color mode="determinate" value="30"></mat-progress-bar>
                         <p>85%</p>
                     </div>
                     <div class="flex items-center justify-center flex-col">
-                        <button class="w-2/3 h-fit bg-corPrimaria text-white shadow-lg rounded-sm">Definir <fa-icon
+                        <button class="w-2/3 bg-corPrimaria text-white shadow-lg rounded-sm">Definir <fa-icon
                                 [icon]="faGear"></fa-icon></button>
                     </div>
                 </div>
@@ -40,25 +40,36 @@
                     </a>
                 </div>
                 <div class="flex w-full h-9/10 flex-col">
-                    <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
+                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4" (click)="routerLinkComodo()">
                         <div class="flex w-2/6 h-full justify-center items-center">
                             <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full justify-center items-center">
                             <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="flex w-full h-9/10 flex-col">
-                    <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
+                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4" (click)="routerLinkComodo()">
                         <div class="flex w-2/6 h-full justify-center items-center">
                             <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full justify-center items-center">
                             <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
+                <div class="flex w-full h-9/10 flex-col">
+                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4" (click)="routerLinkComodo()">
+                        <div class="flex w-2/6 h-full justify-center items-center">
+                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                        </div>
+                        <div class="flex w-4/6 h-full justify-center items-center">
+                            <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
+                        </div>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
