@@ -2,69 +2,7 @@
     <header class="flex h-1/10 justify-center w-full">
         <app-nav></app-nav>
     </header>
-    <main class="flex h-9/10 w-screen bg-white">
-        <section class="flex w-full h-full justify-center">
-            <div class="grid grid-rows-2 h-full w-full justify-center">
-                <div class="grid-span-1 flex w-full flex-col">
-                    <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
-                        <h3>Informações Gerais</h3>
-                    </div>
-                    <div class="grid grid-cols-2 w-full h-9/10">
-                        <div class="flex items-center justify-center flex-col">
-                            Status
-                            <p style="color: red;">Fechado</p>
-                        </div>
-                        <div class="flex items-center justify-center flex-col">
-                            Temperatura Geral:
-                            <p>27°C</p>
-                        </div>
-                        <div class="flex items-center justify-center flex-col">
-                            Gás
-                            <mat-progress-bar color mode="determinate" value="85"></mat-progress-bar>
-                            <p>85%</p>
-                        </div>
-                        <div class="flex items-center justify-center flex-col">
-                            <button class="w-2/3 h-fit bg-corPrimaria text-white shadow-lg rounded-sm">Definir <fa-icon [icon]="faGear"></fa-icon></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-span-2 flex w-full flex-col">
-                    <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
-                        <h3>Cômodos</h3>
-                    </div>
-                    <div class="flex w-full h-9/10 flex-col">
-                        <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
-                            <div class="flex w-2/6 h-full justify-center items-center">
-                                <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
-                            </div>
-                            <div class="flex w-4/6 h-full justify-center items-center">
-                                <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex w-full h-9/10 flex-col">
-                        <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
-                            <div class="flex w-2/6 h-full justify-center items-center">
-                                <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
-                            </div>
-                            <div class="flex w-4/6 h-full justify-center items-center">
-                                <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex w-full h-9/10 flex-col">
-                        <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
-                            <div class="flex w-2/6 h-full justify-center items-center">
-                                <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
-                            </div>
-                            <div class="flex w-4/6 h-full justify-center items-center">
-                                <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+    <main class="flex h-9/10">
+        <router-outlet></router-outlet>
     </main>
 </section>

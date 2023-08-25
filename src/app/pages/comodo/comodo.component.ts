@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-comodo',
   templateUrl: './comodo.component.html',
@@ -11,5 +11,7 @@ export class ComodoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  faPowerOff = faPowerOff;
 
 }

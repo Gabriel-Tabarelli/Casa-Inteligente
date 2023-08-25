@@ -11,16 +11,13 @@ import { ConfiguracoesComponent } from './pages/configuracoes/configuracoes.comp
 import { ComodoComponent } from './pages/comodo/comodo.component';
 import { InformacoesGeraisComponent } from './pages/informacoes-gerais/informacoes-gerais.component';
 import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
-import { NavComponent } from './components/nav/nav.component';
 import { NavModule } from './components/nav/nav.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ComodoModule } from './pages/comodo/comodo.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfiguracoesComponent,
-    ComodoComponent,
     InformacoesGeraisComponent,
   ],
   imports: [
@@ -29,8 +26,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NavModule,
     TelaInicialModule,
     MenuPrincipalModule,
-    FontAwesomeModule,
-    MatProgressBarModule
+    ComodoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
