@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
-@tailwind utilities
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@tailwind utilities;
 
+
+
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Manrope', sans-serif;
+}
 .mat-icon {
     color: #1D425C;
 }

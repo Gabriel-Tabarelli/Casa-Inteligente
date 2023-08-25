@@ -1,3 +1,4 @@
+import { MenuPrincipalModule } from './pages/menu-principal/menu-principal.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRountingModule } from "./app-routing.module";
@@ -10,19 +11,26 @@ import { ConfiguracoesComponent } from './pages/configuracoes/configuracoes.comp
 import { ComodoComponent } from './pages/comodo/comodo.component';
 import { InformacoesGeraisComponent } from './pages/informacoes-gerais/informacoes-gerais.component';
 import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
+import { NavComponent } from './components/nav/nav.component';
+import { NavModule } from './components/nav/nav.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuPrincipalComponent,
     ConfiguracoesComponent,
     ComodoComponent,
-    InformacoesGeraisComponent
+    InformacoesGeraisComponent,
   ],
   imports: [
     BrowserModule,
     AppRountingModule,
-    TelaInicialModule
+    NavModule,
+    TelaInicialModule,
+    MenuPrincipalModule,
+    FontAwesomeModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
