@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faBed, faKitchenSet, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faKitchenSet, faGear, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu-principal',
@@ -17,6 +17,7 @@ export class MenuPrincipalComponent implements OnInit {
   faBed = faBed;
   faKitchenSet = faKitchenSet;
   faGear = faGear;
+  faPowerOff = faPowerOff;
 
   routerLinkComodo(): void {
     this.router.navigate(['comodo']);

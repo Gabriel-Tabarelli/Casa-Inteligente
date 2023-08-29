@@ -7,8 +7,11 @@
                 </div>
                 <div class="grid grid-cols-2 w-full h-5/6">
                     <div class="flex items-center justify-center flex-col">
-                        Status
-                        <p style="color: red;">Fechado</p>
+                        Status Portão:
+                        <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
+                            <p style="color: red;">Fechado</p>
+                            <fa-icon [icon]="faPowerOff" class="text-corPrimaria"></fa-icon>
+                        </div>
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         Temperatura Geral:
