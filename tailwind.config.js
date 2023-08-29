@@ -16,6 +16,7 @@ module.exports = {
       },
       gridTemplateRows: {
         'custom': '30% 70%', // Define your custom grid template
+        'customComodo' : '40% 60%',
       },
     },
   },
