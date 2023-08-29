@@ -11,8 +11,21 @@
                             28°C
                         </div>
                         <div class="grid grid-cols-2 h-2/5 w-2/3">
-                            <div class="flex w-full h-full">
-                                <fa-icon [icon]="faPowerOff"></fa-icon>
+                            <div class="flex w-full h-full justify-center items-center">
+                                <fa-icon [icon]="faPowerOff" style="color: green;"></fa-icon>
+                            </div>
+                            <div class="flex w-full h-full justify-center items-center">
+                                <div class="flex flex-col">
+                                    <div class="flex w-full h-1/2 justify-center items-center">
+                                        <fa-icon [icon]="faArrowUp" style="color: green;"></fa-icon>
+                                    </div>
+                                    <div>
+                                        <p class="text-center">Temp</p>
+                                    </div>
+                                    <div class="flex w-full h-1/2 justify-center items-center">
+                                        <fa-icon [icon]="faArrowDown" style="color: red;"></fa-icon>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
