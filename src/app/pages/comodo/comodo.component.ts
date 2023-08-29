@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPowerOff, faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff, faCaretUp, faCaretDown, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-comodo',
   templateUrl: './comodo.component.html',
@@ -7,13 +7,19 @@ import { faPowerOff, faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-
 })
 export class ComodoComponent implements OnInit {
 
-  constructor() { }
+  faPowerOff = faPowerOff;
+  faCaretDown = faCaretDown;
+  faCaretUp = faCaretUp;
+  faLightbulb = faLightbulb;
+
+  lights: string;
+  constructor() { 
+    this.lights = '../../../assets/lampada-on.svg';
+  }
 
   ngOnInit(): void {
   }
 
-  faPowerOff = faPowerOff;
-  faArrowDown = faArrowDown;
-  faArrowUp = faArrowUp;
+
 
 }

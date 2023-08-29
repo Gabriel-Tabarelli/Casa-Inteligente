@@ -6,24 +6,27 @@
                     <h3>Ar Condicionado</h3>
                 </div>
                 <div class="flex justify-center items-center w-64 h-64">
-                    <div class="flex w-4/6 h-4/6 justify-center items-center bg-black rounded-sm shadow-xl flex-col" style="background-color: #ABACAC;">
+                    <div class="flex w-4/6 h-4/6 justify-center items-center bg-black rounded-sm shadow-xl flex-col"
+                        style="background-color: #ABACAC;">
                         <div class="flex h-1/5 w-2/3 bg-corFundoCard rounded-sm justify-center items-center">
                             28°C
                         </div>
                         <div class="grid grid-cols-2 h-2/5 w-2/3">
                             <div class="flex w-full h-full justify-center items-center">
-                                <fa-icon [icon]="faPowerOff" style="color: green;"></fa-icon>
+                                <div class="bg-white rounded-2xl">
+                                    <fa-icon [icon]="faPowerOff" class="text-green-800"></fa-icon>
+                                </div>
                             </div>
                             <div class="flex w-full h-full justify-center items-center">
                                 <div class="flex flex-col">
                                     <div class="flex w-full h-1/2 justify-center items-center">
-                                        <fa-icon [icon]="faArrowUp" style="color: green;"></fa-icon>
+                                        <fa-icon [icon]="faCaretUp" class="text-corPrimaria"></fa-icon>
                                     </div>
                                     <div>
-                                        <p class="text-center">Temp</p>
+                                        <p class="text-center text-corPrimaria font-xs">TEMP</p>
                                     </div>
                                     <div class="flex w-full h-1/2 justify-center items-center">
-                                        <fa-icon [icon]="faArrowDown" style="color: red;"></fa-icon>
+                                        <fa-icon [icon]="faCaretDown" class="text-corPrimaria"></fa-icon>
                                     </div>
                                 </div>
                             </div>
@@ -33,38 +36,38 @@
             </div>
             <div class="grid-span-2 flex w-full flex-col">
                 <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
-                    <h3>Cômodos</h3>
+                    <h3>Lâmpadas</h3>
                 </div>
-                <!-- <div class="flex w-full h-9/10 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
-                        <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                <div class="flex w-full h-9/10 flex-col">
+                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
+                        <div class="flex w-4/6 h-full items-center">
+                            <p class="text-corFundoCard text-sm text-left pl-6">Lâmpada Principal</p>
                         </div>
-                        <div class="flex w-4/6 h-full justify-center items-center">
-                            <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
+                        <div class="flex w-2/6 h-full justify-center items-center">
+                            <img [src]="lights">
                         </div>
                     </a>
                 </div>
                 <div class="flex w-full h-9/10 flex-col">
-                    <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
+                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
+                        <div class="flex w-4/6 h-full items-center">
+                            <p class="text-corFundoCard text-sm text-left pl-6">Abajur</p>
+                        </div>
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon [icon]="faLightbulb" class="text-3xl text-gray-400"></fa-icon>
                         </div>
-                        <div class="flex w-4/6 h-full justify-center items-center">
-                            <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="flex w-full h-9/10 flex-col">
-                    <div class="flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4">
+                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
+                        <div class="flex w-4/6 h-full items-center">
+                            <p class="text-corFundoCard text-sm text-left pl-6">Cabaceira</p>
+                        </div>
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                            <img [src]="lights">
                         </div>
-                        <div class="flex w-4/6 h-full justify-center items-center">
-                            <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
-                        </div>
-                    </div>
-                </div> -->
+                    </a>
+                </div>
             </div>
         </div>
     </div>
