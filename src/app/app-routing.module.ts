@@ -7,7 +7,15 @@ import { ConfiguracoesComponent } from "./pages/configuracoes/configuracoes.comp
 
 const routes: Route[] = [
   {
-    path: "tela-inicial",
+    path: "casa-1/tela-inicial",
+    component: MenuPrincipalComponent,
+  },
+  {
+    path: "casa-2/tela-inicial",
+    component: MenuPrincipalComponent,
+  },
+  {
+    path: "casa-3/tela-inicial",
     component: MenuPrincipalComponent,
   },
   {
@@ -21,7 +29,7 @@ const routes: Route[] = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "tela-inicial",
+    redirectTo: "casa-1/tela-inicial",
   }, //default route
 ];
 

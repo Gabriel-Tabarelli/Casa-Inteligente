@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -5,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  constructor(private router : ActivatedRoute) {
+    console.log("app" + router);
+  }
+
   ngOnInit(): void {
     
   }
