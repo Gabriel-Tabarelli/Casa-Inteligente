@@ -3,6 +3,7 @@ import { Route, RouterModule } from "@angular/router";
 import { TelaInicialComponent } from "./pages/tela-inicial/tela-inicial.component";
 import { MenuPrincipalComponent } from "./pages/menu-principal/menu-principal.component";
 import { ComodoComponent } from "./pages/comodo/comodo.component";
+import { ConfiguracoesComponent } from "./pages/configuracoes/configuracoes.component";
 
 const routes: Route[] = [
   {
@@ -12,6 +13,10 @@ const routes: Route[] = [
   {
     path: "comodo",
     component: ComodoComponent,
+  },
+  {
+    path: "configuracoes",
+    component: ConfiguracoesComponent,
   },
   {
     path: "",
