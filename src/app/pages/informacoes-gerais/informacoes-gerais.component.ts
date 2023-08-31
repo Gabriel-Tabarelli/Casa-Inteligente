@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-informacoes-gerais',
@@ -11,5 +12,8 @@ export class InformacoesGeraisComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  faPowerOff = faPowerOff;
+
+  
 
 }
