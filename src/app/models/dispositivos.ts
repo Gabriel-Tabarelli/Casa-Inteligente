@@ -1,10 +1,9 @@
-export class Dispositivos {
+export class Dispositivo {
     id: string;
     nome: string;
     estado: boolean;
-    tipo: "Lampada" | "ArCondicionado" | "Portao" | "Gas";
+    tipo: "Lampada" | "ArCondicionado";
     temperatura?: number;
-    porcentagem?: number;
     
     constructor(){
         this.id = "";
@@ -12,6 +11,5 @@ export class Dispositivos {
         this.estado = false;
         this.tipo = "Lampada";
         this.temperatura = 0;
-        this.porcentagem = 0;
     }
 }

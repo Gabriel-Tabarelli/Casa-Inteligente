@@ -1,5 +1,8 @@
-<section class="flex h-full w-screen bg-white">
-    <div class="flex w-full h-full justify-center">
+<section class="flex h-full w-screen bg-white flex-col">
+    <header class="flex h-[10%] justify-center w-full">
+        <app-nav [casa]="casa"></app-nav>
+    </header>
+    <div class="flex w-full h-[90%] justify-center">
         <div class="grid grid-rows-custom h-full w-full justify-center">
             <div class="grid-span-1 h-full flex w-full flex-col">
                 <div class="border-b-2 h-1/6 w-5/6 border-corPrimaria">
@@ -9,18 +12,21 @@
                     <div class="flex items-center justify-center flex-col">
                         Status Portão:
                         <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
-                            <p style="color: red;">Fechado</p>
-                            <fa-icon [icon]="faPowerOff" class="text-corPrimaria"></fa-icon>
+                            <p style="color: green;" *ngIf="casa.portaoEstado">Aberto</p>
+                            <p style="color: red;" *ngIf="!casa.portaoEstado">Fechado</p>
+                            <fa-icon [icon]="faPowerOff"
+                            [style.color]="casa.portaoEstado == true ? 'red' : 'green'" 
+                            ></fa-icon>
                         </div>
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         Temperatura Geral:
-                        <p>27°C</p>
+                        <p>{{casa.temperaturaGeral}}°C</p>
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         Gás
-                        <mat-progress-bar color mode="determinate" value="30"></mat-progress-bar>
-                        <p>85%</p>
+                        <mat-progress-bar color mode="determinate" value="{{casa.gas}}"></mat-progress-bar>
+                        <p>{{casa.gas}}%</p>
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         <button class="w-2/3 bg-corPrimaria text-white shadow-lg rounded-sm">Definir <fa-icon
@@ -32,36 +38,18 @@
                 <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
                     <h3>Cômodos</h3>
                 </div>
-                <div class="flex w-full h-2/6 flex-col">
+                <div class="flex w-full h-2/6 flex-col" *ngFor="let comodo of casa.comodos">
                     <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-6" (click)="routerLinkComodo()">
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Cozinha'" [icon]="faKitchenSet" class="text-4xl text-corPrimaria"></fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corPrimaria text-sm text-left">Quarto de Arlindo e Maria</p>
+                            <p *ngIf="comodo.tipo != 'Cozinha'" class="text-corPrimaria text-sm text-left">{{comodo.tipo}} de {{comodo.nome}}</p>
+                            <p *ngIf="comodo.tipo == 'Cozinha'" class="text-corPrimaria text-sm text-left">{{comodo.tipo}}</p>
                         </div>
                     </a>
-                </div>
-                <div class="flex w-full h-2/6 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4" (click)="routerLinkComodo()">
-                        <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
-                        </div>
-                        <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corPrimaria text-sm text-left">Quarto de Alice</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex w-full h-2/6 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-4" (click)="routerLinkComodo()">
-                        <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faKitchenSet" class="text-4xl text-corPrimaria"></fa-icon>
-                        </div>
-                        <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corPrimaria text-sm text-left">Cozinha</p>
-                        </div>
-                    </a>
-                </div>                
+                </div>               
             </div>
         </div>
     </div>
