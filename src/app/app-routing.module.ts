@@ -26,8 +26,13 @@ const routes: Route[] = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "casa-1/tela-inicial",
-  }, //default route
+    redirectTo: "casa/1/tela-inicial",
+  },
+  {
+    path: "**",
+    pathMatch: "full",
+    redirectTo: "casa/1/tela-inicial",
+  },
 ];
 
 @NgModule({
