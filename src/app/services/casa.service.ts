@@ -1,23 +1,120 @@
-import { Injectable } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Casa } from '../models/casa';
+
+
+
+
+const APILINK = "";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CasaService {
+export class CasaService implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  setCasa(index : number): void{
-    if(index == 1){
-      localStorage.setItem('casa', '1');
-    } else if(index == 2){
-      localStorage.setItem('casa', '2');
-    } else if(index == 3){
-      localStorage.setItem('casa', '3');
-    }
+  ngOnInit(){}
+  setCasa():void{
+  
+    localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
+  }
+
+  getCasa(): Casa{
+    return JSON.parse(localStorage.getItem("casa")!);
   }
 
   // getCasa(): any{
   //   return JSON.parse(localStorage.getItem('casa'));
   // }
+
+  getCasaAPI(): Casa{
+    // return this.http.get<Casa>('../JSON/casas.json');
+
+    return {
+      "id": "1",
+      "nomeDono": "Arlindo e Maria",
+      "comodos": [
+          {
+              "id": "1",
+              "nome": "Arlindo e Maria",
+              "tipo": "Quarto",
+              "dispositivos": [
+                  {
+                      "id": "1",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "2",
+                      "nome": "Cabeceira",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "3",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+              "id": "2",
+              "nome": "Quarto de Alice",
+              "tipo": "Quarto",
+              "dispositivos": [
+                  {
+                      "id": "4",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "5",
+                      "nome": "Cabeceira",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "6",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+              "id": "3",
+              "nome": "Geral",
+              "tipo": "Cozinha",
+              "dispositivos": [
+                  {
+                      "id": "7",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "8",
+                      "nome": "Cabeceira",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "9",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          }
+      ],
+      "portaoEstado": false,
+      "temperaturaGeral" : 27,
+      "gas": 27
+  };
+  }
 }

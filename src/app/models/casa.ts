@@ -6,6 +6,7 @@ export class Casa {
     comodos: Comodo[];
     portaoEstado: boolean;
     temperaturaGeral: number;
+    gas:number;
 
     constructor(){
         this.id = "";
@@ -13,5 +14,6 @@ export class Casa {
         this.comodos = [];
         this.portaoEstado = false;
         this.temperaturaGeral = 0;
+        this.gas = 0;
     }
 }

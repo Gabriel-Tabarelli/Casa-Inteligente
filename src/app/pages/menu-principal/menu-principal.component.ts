@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faBed, faKitchenSet, faGear, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { Casa } from 'src/app/models/casa';
+import { CasaService } from 'src/app/services/casa.service';
 
 @Component({
   selector: 'app-menu-principal',
@@ -9,17 +11,25 @@ import { faBed, faKitchenSet, faGear, faPowerOff } from '@fortawesome/free-solid
 })
 export class MenuPrincipalComponent implements OnInit {
 
-  constructor(private route: Router) {
-    if(route.url == '/casa-1/tela-inicial'){
-      console.log("casa 1");
-    } else if(route.url == '/casa-2/tela-inicial'){
-      console.log("casa 2");
-    } else if(route.url == '/casa-3/tela-inicial'){
-      console.log("casa 3");
-    }
-  }
+  constructor(
+    private routeActivated: ActivatedRoute,
+    private route: Router,
+    private casaService: CasaService
+  ) { }
+
+  casa!: Casa;
 
   ngOnInit(): void {
+    this.routeActivated.params.subscribe(params => {
+      console.log(params);
+      if (params['id'] == 1) {
+        this.casaService.setCasa();
+        this.casa = this.casaService.getCasa();
+
+      } else {
+        this.route.navigate(['casa/1/tela-inicial']);
+      }
+    });
   }
 
   faBed = faBed;

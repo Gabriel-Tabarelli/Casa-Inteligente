@@ -1,10 +1,15 @@
-import { Dispositivos } from "./dispositivos";
+import { Dispositivo } from "./dispositivos";
 
 export class Comodo {
     id: string;
-    lampadas: Dispositivos[];
+    nome: string;
+    tipo: "Quarto" | "Cozinha" | "Sala" | "Garagem";
+    dispositivos: Dispositivo[];
+
     constructor(){
         this.id = "";
-        this.lampadas = [];
+        this.nome = "";
+        this.tipo = "Quarto";
+        this.dispositivos = [];
     }
 }

@@ -13,6 +13,8 @@ import { InformacoesGeraisComponent } from './pages/informacoes-gerais/informaco
 import { TelaInicialModule } from './pages/tela-inicial/tela-inicial.module';
 import { NavModule } from './components/nav/nav.module';
 import { ComodoModule } from './pages/comodo/comodo.module';
+import { CasaService } from './services/casa.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,12 @@ import { ComodoModule } from './pages/comodo/comodo.module';
     NavModule,
     TelaInicialModule,
     MenuPrincipalModule,
-    ComodoModule
+    ComodoModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CasaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
