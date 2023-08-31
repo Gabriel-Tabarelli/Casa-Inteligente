@@ -4,6 +4,7 @@ import { TelaInicialComponent } from "./pages/tela-inicial/tela-inicial.componen
 import { MenuPrincipalComponent } from "./pages/menu-principal/menu-principal.component";
 import { ComodoComponent } from "./pages/comodo/comodo.component";
 import { ConfiguracoesComponent } from "./pages/configuracoes/configuracoes.component";
+import { InformacoesGeraisComponent } from "./pages/informacoes-gerais/informacoes-gerais.component";
 
 const routes: Route[] = [
   {
@@ -17,6 +18,10 @@ const routes: Route[] = [
   {
     path: "configuracoes",
     component: ConfiguracoesComponent,
+  },
+  {
+    path: "informacoes-gerais",
+    component: InformacoesGeraisComponent,
   },
   {
     path: "",
