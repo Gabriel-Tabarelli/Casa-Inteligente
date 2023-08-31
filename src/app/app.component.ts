@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MqttService } from './services/mqtt.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,6 @@ import { MqttService } from './services/mqtt.service';
 export class AppComponent {
   title = 'casa-inteligente';
 
-  constructor(private mqttService: MqttService) {}
+  constructor() {}
 
-  enviar() {
-    this.mqttService.enviarMensagem();
-  }
 }
