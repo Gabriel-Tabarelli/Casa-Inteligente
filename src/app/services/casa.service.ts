@@ -16,9 +16,13 @@ export class CasaService implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit(){}
-  setCasa():void{
-  
-    localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
+
+  setCasa(casa: Casa | undefined):void{
+    if(this.getCasa() == null){
+        localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
+    } else {
+        localStorage.setItem("casa", JSON.stringify(casa));
+    }
   }
 
   getCasa(): Casa{
@@ -50,7 +54,7 @@ export class CasaService implements OnInit {
                   {
                       "id": "2",
                       "nome": "Cabeceira",
-                      "estado": false,
+                      "estado": true,
                       "tipo": "Lampada"
                   },
                   {
@@ -63,31 +67,6 @@ export class CasaService implements OnInit {
           },
           {
               "id": "2",
-              "nome": "Quarto de Alice",
-              "tipo": "Quarto",
-              "dispositivos": [
-                  {
-                      "id": "4",
-                      "nome": "Abajur",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "5",
-                      "nome": "Cabeceira",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "6",
-                      "nome": "Lâmpada Principal",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  }
-              ]
-          },
-          {
-              "id": "3",
               "nome": "Geral",
               "tipo": "Cozinha",
               "dispositivos": [
@@ -110,7 +89,32 @@ export class CasaService implements OnInit {
                       "tipo": "Lampada"
                   }
               ]
-          }
+          },
+          {
+            "id": "3",
+              "nome": "Geral",
+              "tipo": "Sala",
+              "dispositivos": [
+                  {
+                      "id": "10",
+                      "nome": "Lustre",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "11",
+                      "nome": "Luz Rack",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "12",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
       ],
       "portaoEstado": false,
       "temperaturaGeral" : 27,
