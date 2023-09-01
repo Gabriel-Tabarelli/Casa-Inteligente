@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faBed, faKitchenSet, faGear, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faKitchenSet, faGear, faPowerOff, faCouch } from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
+import { Comodo } from 'src/app/models/comodo';
 import { CasaService } from 'src/app/services/casa.service';
 
 @Component({
@@ -27,18 +28,19 @@ export class MenuPrincipalComponent implements OnInit {
         this.casa = this.casaService.getCasa();
 
       } else {
-        this.route.navigate(['casa/1/tela-inicial']);
+        this.route.navigate(['casa/1']);
       }
     });
   }
 
   faBed = faBed;
   faKitchenSet = faKitchenSet;
+  faCouch = faCouch;
   faGear = faGear;
   faPowerOff = faPowerOff;
 
-  routerLinkComodo(): void {
-    this.route.navigate(['comodo']);
-  }
+  // routerLinkComodo(comodo:Comodo): void {
+  //   this.route.navigate(['comodo']);
+  // }
 
 }

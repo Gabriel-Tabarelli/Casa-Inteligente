@@ -8,13 +8,16 @@ import { InformacoesGeraisComponent } from "./pages/informacoes-gerais/informaco
 
 const routes: Route[] = [
   {
-    path: "casa/:id/tela-inicial",
+    path: "casa/:id",
     component: MenuPrincipalComponent,
+    children:[
+      {
+        path: "comodo",
+        component: ComodoComponent,
+      },
+    ]
   },
-  {
-    path: "comodo",
-    component: ComodoComponent,
-  },
+
   {
     path: "configuracoes",
     component: ConfiguracoesComponent,
@@ -26,12 +29,12 @@ const routes: Route[] = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "casa/1/tela-inicial",
+    redirectTo: "casa/1",
   },
   {
     path: "**",
     pathMatch: "full",
-    redirectTo: "casa/1/tela-inicial",
+    redirectTo: "casa/1",
   },
 ];
 
