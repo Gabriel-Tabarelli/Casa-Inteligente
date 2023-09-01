@@ -23,7 +23,7 @@ export class MenuPrincipalComponent implements OnInit {
     this.routeActivated.params.subscribe(params => {
       console.log(params);
       if (params['id'] == 1) {
-        this.casaService.setCasa();
+        this.casaService.setCasa(undefined);
         this.casa = this.casaService.getCasa();
 
       } else {

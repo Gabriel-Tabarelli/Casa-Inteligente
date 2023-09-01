@@ -5,21 +5,24 @@
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
                     <div class="inputLamp">
-                        <p>Sala</p>
-                        <p class="text-red-600">OFF</p>
+                        <p>Quartos</p>
+                            <p class="text-green-600" *ngIf="lampadaAuxQuartos" (click)="mudaEstadoLampadasQuartos()">ON</p>
+                            <p class="text-red-600" *ngIf="!lampadaAuxQuartos" (click)="mudaEstadoLampadasQuartos()">OFF</p>
                     </div>
                     <div class="inputLamp">
-                        <p>Quartos</p>
-                        <p class="text-green-600">ON</p>
+                        <p>Sala</p>
+                        <p class="text-green-600" *ngIf="lampadaAuxSala" (click)="mudaEstadoLampadaSala()">ON</p>
+                        <p class="text-red-600" *ngIf="!lampadaAuxSala" (click)="mudaEstadoLampadaSala()">OFF</p>
                     </div>
                     <div class="inputLamp">
                         <p>Cozinha</p>
-                        <p class="text-green-600">ON</p>
+                        <p class="text-green-600" *ngIf="lampadaAuxCozinha" (click)="mudaEstadoLampadasCozinha()">ON</p>
+                        <p class="text-red-600" *ngIf="!lampadaAuxCozinha" (click)="mudaEstadoLampadasCozinha()">OFF</p>
                     </div>
                 </div>
                 <div class="gridLigaTodasLampadas">   
                     <div class="interruptor">
-                        <img src="../../../assets/lampada-on.svg" class="h-full w-full">
+                        <img src="../../../assets/lampada-on.svg" *ngIf="validaLampadas()" (click)="desligaTodasLampadas()" class="h-full w-full">
                     </div>
                     <div class="text-white flex justify-center h-full w-full">
                         Geral
@@ -59,7 +62,7 @@
             <p>Status portão:</p>
             <div class="controlePortao"> 
                 <h1 class="text-red-600">FECHADO</h1>
-                <p class="flex items-center">Tavin coloca icon power OFf</p>
+                <p class="flex items-center"><img src="../../../assets/Liga-desliga-ar.svg" alt=""> </p>
             </div>
         </div>
     </div>
