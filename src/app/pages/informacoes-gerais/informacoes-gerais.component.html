@@ -4,21 +4,20 @@
             <div class="flex justify-center items-center text-white">Lâmpadas</div>
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
-                    <div class="inputLamp">
-                        <p>Quartos</p>
-                            <p class="text-green-600" *ngIf="lampadaAuxQuartos" (click)="mudaEstadoLampadasQuartos()">ON</p>
-                            <p class="text-red-600" *ngIf="!lampadaAuxQuartos" (click)="mudaEstadoLampadasQuartos()">OFF</p>
-                    </div>
-                    <div class="inputLamp">
-                        <p>Sala</p>
-                        <p class="text-green-600" *ngIf="lampadaAuxSala" (click)="mudaEstadoLampadaSala()">ON</p>
-                        <p class="text-red-600" *ngIf="!lampadaAuxSala" (click)="mudaEstadoLampadaSala()">OFF</p>
-                    </div>
-                    <div class="inputLamp">
-                        <p>Cozinha</p>
-                        <p class="text-green-600" *ngIf="lampadaAuxCozinha" (click)="mudaEstadoLampadasCozinha()">ON</p>
-                        <p class="text-red-600" *ngIf="!lampadaAuxCozinha" (click)="mudaEstadoLampadasCozinha()">OFF</p>
-                    </div>
+                    <div class="inputLamp" *ngFor="let comodo of comodosFor">
+                        <div *ngIf="comodo.tipo == 'Quarto'" class="gridDentroDoInput">
+                            <p>
+                                {{comodo.tipo}}s</p>
+                        </div>
+                        <div *ngIf="comodo.tipo != 'Quarto'" class="gridDentroDoInput">
+                            <p>
+                                {{comodo.tipo}}</p>
+                        </div>
+                            <p class="text-green-600" (click)="mudaEstadoLampada(comodo.tipo)" *ngIf="validaDispositivos(comodo)">ON</p>
+                            <p class="text-red-600" (click)="mudaEstadoLampada(comodo.tipo)" *ngIf="!validaDispositivos(comodo)">OFF</p>
+                        
+                   </div>
+                    
                 </div>
                 <div class="gridLigaTodasLampadas">   
                     <div class="interruptor">
@@ -34,8 +33,11 @@
             <div class="flex justify-center items-center text-white">Ar-Condicionado</div>
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
-                    <div class="inputLamp" *ngFor="let comodos of comodosFor">
-                        <p>{{comodos}}</p>
+                    <div class="inputLamp" *ngFor="let comodo of comodosFor">
+                        <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">
+                                {{comodo.tipo}} de {{comodo.nome}}</p>
+                            <p *ngIf="comodo.tipo != 'Quarto'" class="text-corPrimaria text-sm text-left">
+                                {{comodo.tipo}}</p>
                         <p class="text-red-600">OFF</p>
                     </div>
                 </div>

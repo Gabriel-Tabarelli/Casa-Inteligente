@@ -12,7 +12,7 @@ const routes: Route[] = [
     component: MenuPrincipalComponent,
   },
   {
-    path: ":comodo",
+    path: "comodo",
     component: ComodoComponent,
   },
   {

@@ -30,11 +30,10 @@
     .inputLamp{
         @apply w-11/12 h-1/5;
         @apply bg-corFundoCard;
-        @apply rounded-lg;
-        @apply flex items-center;
+        @apply rounded-lg;  
         @apply p-1;
         @apply space-x-3;
-    }
+   }
 
     .gridLigaTodasLampadas{
         display: grid;
@@ -67,5 +66,13 @@
         display: grid;
         grid-template-rows: 10% 90%;
         @apply justify-items-center;
+    }
+
+    .gridDentroDoInput{
+        display: grid;
+        grid-template-columns: 70% 30%;
+        @apply text-corPrimaria text-sm text-left;
+        @apply items-center;
+        @apply w-full h-full;
     }
 }
