@@ -13,41 +13,26 @@ import { CasaService } from 'src/app/services/casa.service';
 export class MenuPrincipalComponent implements OnInit {
 
   constructor(
-    private routeActivated: ActivatedRoute,
     private route: Router,
     private casaService: CasaService
   ) { }
 
+
   casa!: Casa;
-  showModalSenha: boolean = false;
   ngOnInit(): void {
-    this.routeActivated.params.subscribe(params => {
-      console.log(params);
-      if (params['id'] == 1) {
-        if(this.casaService.getCasa() == null){
-          this.showModalSenha = true;
-        }
-        this.casaService.setCasa();
-        this.casa = this.casaService.getCasa();
-
-      } else {
-        this.route.navigate(['casa/1']);
-      }
-    });
+    this.casa = this.casaService.getCasa();
   }
-
+  
+  //icones
   faBed = faBed;
   faKitchenSet = faKitchenSet;
   faCouch = faCouch;
   faGear = faGear;
   faPowerOff = faPowerOff;
 
-  // routerLinkComodo(comodo:Comodo): void {
-  //   this.route.navigate(['comodo']);
-  // }
+
   routerComodo(comodo: Comodo): void {
     localStorage.setItem('comodo', JSON.stringify(comodo));
     this.route.navigate(['comodo']);
   }
-
 }

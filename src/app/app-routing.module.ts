@@ -5,33 +5,42 @@ import { MenuPrincipalComponent } from "./pages/menu-principal/menu-principal.co
 import { ComodoComponent } from "./pages/comodo/comodo.component";
 import { ConfiguracoesComponent } from "./pages/configuracoes/configuracoes.component";
 import { InformacoesGeraisComponent } from "./pages/informacoes-gerais/informacoes-gerais.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Route[] = [
   {
-    path: "casa/:id",
+    path: "tela-inicial",
+    component: TelaInicialComponent,
+  },
+  {
+    path: "menu-principal",
     component: MenuPrincipalComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "comodo",
     component: ComodoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "configuracoes",
     component: ConfiguracoesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "informacoes-gerais",
     component: InformacoesGeraisComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "casa/1",
+    redirectTo: "tela-inicial",
   },
   {
     path: "**",
     pathMatch: "full",
-    redirectTo: "casa/1",
+    redirectTo: "tela-inicial",
   },
 ];
 
