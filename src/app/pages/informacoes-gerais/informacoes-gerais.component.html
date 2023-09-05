@@ -4,18 +4,17 @@
             <div class="flex justify-center items-center text-white">Lâmpadas</div>
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
-                    <div class="inputLamp" *ngFor="let comodo of comodosFor">
-                        <div *ngIf="comodo.tipo == 'Quarto'" class="gridDentroDoInput">
-                            <p>
-                                {{comodo.tipo}}s</p>
+                    <div class="inputLamp" *ngFor="let comodo of casa.comodos">
+                        <div *ngIf="comodo.tipo == 'Quarto'" class="gridDentroDoInput" (click)="mudaEstadoLampada(comodo)">
+                            <p>{{comodo.tipo}}s</p>
+                            <p class="text-green-600" *ngIf="validaDispositivos(comodo)">ON</p>
+                            <p class="text-red-600" *ngIf="!validaDispositivos(comodo)">OFF</p>
                         </div>
-                        <div *ngIf="comodo.tipo != 'Quarto'" class="gridDentroDoInput">
-                            <p>
-                                {{comodo.tipo}}</p>
+                        <div *ngIf="comodo.tipo != 'Quarto'" class="gridDentroDoInput" (click)="mudaEstadoLampada(comodo)">
+                            <p>{{comodo.tipo}}</p>
+                            <p class="text-green-600" *ngIf="validaDispositivos(comodo)">ON</p>
+                            <p class="text-red-600" *ngIf="!validaDispositivos(comodo)">OFF</p>
                         </div>
-                            <p class="text-green-600" (click)="mudaEstadoLampada(comodo.tipo)" *ngIf="validaDispositivos(comodo)">ON</p>
-                            <p class="text-red-600" (click)="mudaEstadoLampada(comodo.tipo)" *ngIf="!validaDispositivos(comodo)">OFF</p>
-                        
                    </div>
                     
                 </div>
@@ -33,7 +32,7 @@
             <div class="flex justify-center items-center text-white">Ar-Condicionado</div>
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
-                    <div class="inputLamp" *ngFor="let comodo of comodosFor">
+                    <div class="inputLamp" *ngFor="let comodo of casa.comodos">
                         <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">
                                 {{comodo.tipo}} de {{comodo.nome}}</p>
                             <p *ngIf="comodo.tipo != 'Quarto'" class="text-corPrimaria text-sm text-left">
