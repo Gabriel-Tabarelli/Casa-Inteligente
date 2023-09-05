@@ -34,17 +34,9 @@
             <div class="flex justify-center items-center text-white">Ar-Condicionado</div>
             <div class="gridDentroDoCard">
                 <div class="lampOffOn">
-                    <div class="inputLamp">
-                        <p>Sala</p>
+                    <div class="inputLamp" *ngFor="let comodos of comodosFor">
+                        <p>{{comodos}}</p>
                         <p class="text-red-600">OFF</p>
-                    </div>
-                    <div class="inputLamp">
-                        <p>Quartos</p>
-                        <p class="text-green-600">ON</p>
-                    </div>
-                    <div class="inputLamp">
-                        <p>Cozinha</p>
-                        <p class="text-green-600">ON</p>
                     </div>
                 </div>
                 <div class="gridLigaTodasLampadas">   
@@ -62,7 +54,7 @@
             <p>Status portão:</p>
             <div class="controlePortao"> 
                 <h1 class="text-red-600">FECHADO</h1>
-                <p class="flex items-center"><img src="../../../assets/Liga-desliga-ar.svg" alt=""> </p>
+                <p class="flex items-center"><img src="../../../assets/Liga-desliga-ar.svg"> </p>
             </div>
         </div>
     </div>

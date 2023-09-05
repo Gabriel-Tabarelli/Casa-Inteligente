@@ -17,14 +17,20 @@ export class InformacoesGeraisComponent implements OnInit {
   lampadaAuxQuartos!:boolean;
   lampadaAuxCozinha!: boolean;
   lampadaAuxSala!: boolean;
+  comodosFor!: any;
+  dispositivoUm!:  String;
 
   ngOnInit(): void {
      this.casa=this.casaService.getCasa();
+     this.comodosFor= this.casa.comodos;
      this.verificaLampadas();
+     
   }
   faPowerOff = faPowerOff;
   
   verificaLampadas(){
+
+   this.dispositivoUm = JSON.stringify(this.casa.comodos[0].tipo);
 
     for(let i=0; i<=2; i++){
       this.lampadaAuxQuartos= this.casa.comodos[0].dispositivos[i].estado;
