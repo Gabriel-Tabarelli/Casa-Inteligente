@@ -1,6 +1,6 @@
 <section class="flex h-full w-screen bg-white flex-col">
     <header class="flex h-[10%] justify-center w-full">
-        <app-nav [casa]="casa"></app-nav>
+        <app-nav [tituloPagina]="'Casa de ' + casa.nomeDono"></app-nav>
     </header>
     <div class="flex w-full h-[90%] justify-center">
         <div class="grid grid-rows-custom h-full w-full justify-center">
@@ -15,8 +15,7 @@
                             <p style="color: green;" *ngIf="casa.portaoEstado">Aberto</p>
                             <p style="color: red;" *ngIf="!casa.portaoEstado">Fechado</p>
                             <fa-icon [icon]="faPowerOff"
-                            [style.color]="casa.portaoEstado == true ? 'red' : 'green'" 
-                            ></fa-icon>
+                                [style.color]="casa.portaoEstado == true ? 'red' : 'green'"></fa-icon>
                         </div>
                     </div>
                     <div class="flex items-center justify-center flex-col">
@@ -39,18 +38,24 @@
                     <h3>Cômodos</h3>
                 </div>
                 <div class="flex w-full h-2/6 flex-col" *ngFor="let comodo of casa.comodos; index as index">
-                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-6"  routerLink="['casa', casa.id, 'comodo']">
+                    <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-6"
+                        (click)="routerComodo(comodo)">
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed" class="text-4xl text-corPrimaria"></fa-icon>
-                            <fa-icon *ngIf="comodo.tipo == 'Cozinha'" [icon]="faKitchenSet" class="text-4xl text-corPrimaria"></fa-icon>
-                            <fa-icon *ngIf="comodo.tipo == 'Sala'" [icon]="faCouch" class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed"
+                                class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Cozinha'" [icon]="faKitchenSet"
+                                class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Sala'" [icon]="faCouch"
+                                class="text-4xl text-corPrimaria"></fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full items-center">
-                            <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">{{comodo.tipo}} de {{comodo.nome}}</p>
-                            <p *ngIf="comodo.tipo != 'Quarto'" class="text-corPrimaria text-sm text-left">{{comodo.tipo}}</p>
+                            <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">
+                                {{comodo.tipo}} de {{comodo.nome}}</p>
+                            <p *ngIf="comodo.tipo != 'Quarto'" class="text-corPrimaria text-sm text-left">
+                                {{comodo.tipo}}</p>
                         </div>
                     </a>
-                </div>               
+                </div>
             </div>
         </div>
     </div>

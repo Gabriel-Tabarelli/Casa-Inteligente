@@ -10,14 +10,11 @@ const routes: Route[] = [
   {
     path: "casa/:id",
     component: MenuPrincipalComponent,
-    children:[
-      {
-        path: "comodo",
-        component: ComodoComponent,
-      },
-    ]
   },
-
+  {
+    path: ":comodo",
+    component: ComodoComponent,
+  },
   {
     path: "configuracoes",
     component: ConfiguracoesComponent,

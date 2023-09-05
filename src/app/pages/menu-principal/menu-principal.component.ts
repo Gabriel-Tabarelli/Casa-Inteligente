@@ -42,5 +42,9 @@ export class MenuPrincipalComponent implements OnInit {
   // routerLinkComodo(comodo:Comodo): void {
   //   this.route.navigate(['comodo']);
   // }
+  routerComodo(comodo: Comodo): void {
+    localStorage.setItem('comodo', JSON.stringify(comodo));
+    this.route.navigate(['comodo']);
+  }
 
 }
