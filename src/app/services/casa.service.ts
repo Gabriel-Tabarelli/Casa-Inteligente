@@ -17,12 +17,11 @@ export class CasaService implements OnInit {
 
   ngOnInit(){}
 
-  setCasa(casa: Casa | undefined):void{
-    if(this.getCasa() == null){
-        localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
-    } else {
-        localStorage.setItem("casa", JSON.stringify(casa));
-    }
+  setCasa():void{
+    localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
+  }
+  updateCasa(casa: Casa):void{
+    localStorage.setItem("casa", JSON.stringify(casa));
   }
 
   getCasa(): Casa{

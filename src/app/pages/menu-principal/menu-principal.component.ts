@@ -19,12 +19,15 @@ export class MenuPrincipalComponent implements OnInit {
   ) { }
 
   casa!: Casa;
-
+  showModalSenha: boolean = false;
   ngOnInit(): void {
     this.routeActivated.params.subscribe(params => {
       console.log(params);
       if (params['id'] == 1) {
-        this.casaService.setCasa(undefined);
+        if(this.casaService.getCasa() == null){
+          this.showModalSenha = true;
+        }
+        this.casaService.setCasa();
         this.casa = this.casaService.getCasa();
 
       } else {

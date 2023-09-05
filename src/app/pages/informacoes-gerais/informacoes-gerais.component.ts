@@ -67,7 +67,7 @@ export class InformacoesGeraisComponent implements OnInit {
         this.casa.comodos[i].dispositivos[j].estado = false;
       }
     }
-    this.casaService.setCasa(this.casa);
+    this.updateCasa();
   }
 
   validaLampadas(): boolean{
@@ -85,12 +85,11 @@ export class InformacoesGeraisComponent implements OnInit {
     for(let i=0; i< this.casa.comodos[0].dispositivos.length; i++){
       if(!this.casa.comodos[0].dispositivos[i].estado){
         this.casa.comodos[0].dispositivos[i].estado=true;
-        this.casaService.setCasa(this.casa);
       }else{
         this.casa.comodos[0].dispositivos[i].estado=false;
-        this.casaService.setCasa(this.casa);
       }
     }
+    this.updateCasa();
   }
 
   mudaEstadoLampadasCozinha(){
@@ -99,12 +98,11 @@ export class InformacoesGeraisComponent implements OnInit {
       if(!this.casa.comodos[1].dispositivos[i].estado){
         console.log("TRUE")
         this.casa.comodos[1].dispositivos[i].estado=true;
-        this.casaService.setCasa(this.casa);
       }else{
         this.casa.comodos[1].dispositivos[i].estado=false;
-        this.casaService.setCasa(this.casa);
       }
     }
+    this.updateCasa();
   }
 
   mudaEstadoLampadaSala(){
@@ -114,12 +112,15 @@ export class InformacoesGeraisComponent implements OnInit {
         console.log("TRUE")
         this.casa.comodos[2].dispositivos[i].estado=true;
         console.log(this.casa.comodos[2].dispositivos[i].estado);
-        this.casaService.setCasa(this.casa);
       }else{
         this.casa.comodos[2].dispositivos[i].estado=false;
-        this.casaService.setCasa(this.casa);
       }
+      this.updateCasa();
     }
+  }
+
+  updateCasa() : void{
+    this.casaService.updateCasa(this.casa);
   }
 
   
