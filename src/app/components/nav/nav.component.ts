@@ -10,17 +10,15 @@ import { CasaService } from 'src/app/services/casa.service';
 })
 export class NavComponent{
 
-  constructor(private route : Router,
-     private casaService : CasaService, 
-     private routeActivated : ActivatedRoute) { }
+  constructor(private route : Router) { }
 
   @Input()
-  casa!: Casa;
+  tituloPagina!: string;
 
-  back(): void {
+  voltar(): void {
     this.route.navigate(['/']);
   }
-  settings():void{
+  configuracoes():void{
     this.route.navigate(['/settings']);
   }
 }

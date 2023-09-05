@@ -1,5 +1,8 @@
-<section class="flex h-full w-screen bg-white">
-    <div class="flex w-full h-full justify-center">
+<section class="flex h-full w-screen bg-white flex-col">
+    <header class="flex h-[10%] justify-center w-full">
+        <app-nav [tituloPagina]="tituloPagina"></app-nav>
+    </header>
+    <div class="flex w-full h-[90%] justify-center">
         <div class="grid grid-rows-customComodo h-full w-full justify-center">
             <div class="grid-span-1 flex w-full flex-col">
                 <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
@@ -33,33 +36,15 @@
                 <div class="border-b-2 h-1/10 w-5/6 border-corPrimaria">
                     <h3>Lâmpadas</h3>
                 </div>
-                <div class="flex w-full h-9/10 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
+                <div class="flex w-full h-9/10 flex-col" *ngFor="let lampada of comodo.dispositivos">
+                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4" (click)="setLampada(lampada)">
                         <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corFundoCard text-sm text-left pl-6">Lâmpada Principal</p>
+                            <p class="text-corFundoCard text-sm text-left pl-6">{{lampada.nome}}</p>
                         </div>
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <img [src]="lights">
-                        </div>
-                    </a>
-                </div>
-                <div class="flex w-full h-9/10 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
-                        <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corFundoCard text-sm text-left pl-6">Abajur</p>
-                        </div>
-                        <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon [icon]="faLightbulb" class="text-3xl text-gray-400"></fa-icon>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex w-full h-9/10 flex-col">
-                    <a class="cursor-pointer flex w-full h-full bg-corPrimaria shadow-lg rounded-sm mt-4">
-                        <div class="flex w-4/6 h-full items-center">
-                            <p class="text-corFundoCard text-sm text-left pl-6">Cabaceira</p>
-                        </div>
-                        <div class="flex w-2/6 h-full justify-center items-center">
-                            <img [src]="lights">
+                            <img [src]="lights" *ngIf="lampada.estado">
+                            <fa-icon [icon]="faLightbulb" *ngIf="!lampada.estado"
+                                class="text-3xl text-gray-400"></fa-icon>
                         </div>
                     </a>
                 </div>
