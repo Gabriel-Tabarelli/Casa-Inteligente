@@ -8,11 +8,11 @@ import { InformacoesGeraisComponent } from "./pages/informacoes-gerais/informaco
 
 const routes: Route[] = [
   {
-    path: "casa/:id/tela-inicial",
+    path: "casa/:id",
     component: MenuPrincipalComponent,
   },
   {
-    path: "comodo",
+    path: ":comodo",
     component: ComodoComponent,
   },
   {
@@ -26,12 +26,12 @@ const routes: Route[] = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "casa/1/tela-inicial",
+    redirectTo: "casa/1",
   },
   {
     path: "**",
     pathMatch: "full",
-    redirectTo: "casa/1/tela-inicial",
+    redirectTo: "casa/1",
   },
 ];
 
