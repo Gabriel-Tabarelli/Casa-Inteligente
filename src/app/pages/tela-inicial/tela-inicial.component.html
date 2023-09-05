@@ -1,1 +1,23 @@
-<mat-icon>home</mat-icon>
+<section class="flex  items-center justify-evenly z-50 flex-col w-screen h-full">
+    <img src="../../../assets/Logo.svg" class="w-48 h-auto">
+    <form class="flex justify-center flex-col bg-white w-full h-[60%] max-w-sm p-4 rounded-md shadow-lg">
+        <h1 class="text-2xl font-semibold mb-4 text-center">Acesse sua casa</h1>
+        <h2 class="text-xl font-semibold mb-4">Usuário: </h2> 
+        <input type="text" name="nome" placeholder="Insira o seu nome de usuário"
+            class="w-full border rounded-md p-2 mb-4" [(ngModel)]="login">
+
+        <h3 class="text-xl font-semibold mb-4">Senha: </h3>
+        <input type="password" name="senha" placeholder="Insira sua senha "
+            class="w-full border rounded-md p-2 mb-4" [(ngModel)]="senha">
+        <div class="flex justify-center">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md ml-2 hover:bg-blue-600" (click)="verificaSenha()">Entrar</button>
+        </div>
+    </form>
+</section>
+
+<div class="fixed inset-x-0 bottom-0 bg-green-500 p-4 text-white text-center" *ngIf="showModalMessageGreen">
+    Senha Correta, Seja Bem-vindo!
+</div>
+<div class="fixed inset-x-0 bottom-0 bg-red-500 p-4 text-white text-center" *ngIf="showModalMessageRed">
+    Senha Incorreta, Tente Novamente!
+</div>

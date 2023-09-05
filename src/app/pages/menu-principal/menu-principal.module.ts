@@ -5,6 +5,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavModule } from 'src/app/components/nav/nav.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [MenuPrincipalComponent],
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     MatProgressBarModule,
     FontAwesomeModule,
     NavModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class MenuPrincipalModule { }
