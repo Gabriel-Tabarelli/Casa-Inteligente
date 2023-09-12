@@ -14,8 +14,8 @@
                         <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
                             <p style="color: green;" *ngIf="casa.portaoEstado">Aberto</p>
                             <p style="color: red;" *ngIf="!casa.portaoEstado">Fechado</p>
-                            <fa-icon [icon]="faPowerOff"
-                                [style.color]="casa.portaoEstado == true ? 'red' : 'green'"></fa-icon>
+                            <fa-icon [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">
+                            </fa-icon>
                         </div>
                     </div>
                     <div class="flex items-center justify-center flex-col">
@@ -28,8 +28,8 @@
                         <p>{{casa.gas}}%</p>
                     </div>
                     <div class="flex items-center justify-center flex-col">
-                        <button class="w-2/3 bg-corPrimaria text-white shadow-lg rounded-sm" (click)="mudaRota()">Definir <fa-icon
-                                [icon]="faGear"></fa-icon></button>
+                        <button class="w-2/3 bg-corPrimaria text-white shadow-lg rounded-sm"
+                            (click)="mudaRota()">Definir <fa-icon [icon]="faGear"></fa-icon></button>
                     </div>
                 </div>
             </div>
@@ -41,12 +41,12 @@
                     <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-6"
                         (click)="routerComodo(comodo)">
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed"
-                                class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed" class="text-4xl text-corPrimaria">
+                            </fa-icon>
                             <fa-icon *ngIf="comodo.tipo == 'Cozinha'" [icon]="faKitchenSet"
                                 class="text-4xl text-corPrimaria"></fa-icon>
-                            <fa-icon *ngIf="comodo.tipo == 'Sala'" [icon]="faCouch"
-                                class="text-4xl text-corPrimaria"></fa-icon>
+                            <fa-icon *ngIf="comodo.tipo == 'Sala'" [icon]="faCouch" class="text-4xl text-corPrimaria">
+                            </fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full items-center">
                             <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">
@@ -61,3 +61,39 @@
     </div>
 </section>
 
+<section class="bg-corFundoCard h-full w-screen flex items-center justify-center bg-opacity-60">
+    <div class="bg-corPrimaria rounded-lg w-[80%] h-1/3">
+        <div class="flex justify-center h-[20%] items-center text-white">Lâmpadas</div>
+        <div class="grid grid-cols-2 h-[80%] w-full">
+            <div class="flex w-full h-full flex-col justify-around items-center">
+                <div class="w-[85%] h-1/4 bg-corFundoCard rounded-lg p-2" *ngFor="let comodo of casa.comodos">
+                    <div *ngIf="comodo.tipo == 'Quarto'"
+                        class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
+                        (click)="mudaEstadoLampada(comodo)">
+                        <p class="col-span-5">{{comodo.tipo}}s</p>
+                        <p class="text-green-600 col-span-2" *ngIf="validaDispositivos(comodo)">ON</p>
+                        <p class="text-red-600  col-span-2" *ngIf="!validaDispositivos(comodo)">OFF</p>
+                    </div>
+                    <div *ngIf="comodo.tipo != 'Quarto'"
+                        class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
+                        (click)="mudaEstadoLampada(comodo)">
+                        <p class="col-span-5">{{comodo.tipo}}</p>
+                        <p class="text-green-600 col-span-2" *ngIf="validaDispositivos(comodo)">ON</p>
+                        <p class="text-red-600  col-span-2" *ngIf="!validaDispositivos(comodo)">OFF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-template-rows: 70% 30% items-center justify-center h-9/10 space-y-3">
+                <div class="h-9/10 w-full">
+                    <img src="../../../assets/lampada-on.svg" *ngIf="validaLampadas()" (click)="desligaTodasLampadas()"
+                        class="h-full w-full">
+                    <fa-icon [icon]="faLightbulb" *ngIf="!validaLampadas()" class="text-7xl text-gray-400"
+                        (click)="ligaTodasLampadas()"></fa-icon>
+                </div>
+                <div class="text-white flex justify-center h-full w-full">
+                    Geral
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
