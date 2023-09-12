@@ -35,4 +35,8 @@ export class MenuPrincipalComponent implements OnInit {
     localStorage.setItem('comodo', JSON.stringify(comodo));
     this.route.navigate(['comodo']);
   }
+
+  mudaRota(){
+    this.route.navigate(['informacoes-gerais'])
+  }
 }

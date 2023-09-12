@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faL, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff,faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
 import { Comodo } from 'src/app/models/comodo';
 import { CasaService } from 'src/app/services/casa.service';
+
 
 @Component({
   selector: 'app-informacoes-gerais',
@@ -10,6 +11,7 @@ import { CasaService } from 'src/app/services/casa.service';
   styleUrls: ['./informacoes-gerais.component.css']
 })
 export class InformacoesGeraisComponent implements OnInit {
+  faLightbulb = faLightbulb;
 
   constructor(private casaService: CasaService) {
 
@@ -27,6 +29,15 @@ export class InformacoesGeraisComponent implements OnInit {
     this.casa.comodos.forEach(comodo => {
       comodo.dispositivos.forEach(dispositivo => {
         dispositivo.estado = false;
+      });
+    });
+    this.updateCasa();
+  }
+
+  ligaTodasLampadas() {
+    this.casa.comodos.forEach(comodo => {
+      comodo.dispositivos.forEach(dispositivo => {
+        dispositivo.estado = true;
       });
     });
     this.updateCasa();

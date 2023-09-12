@@ -15,12 +15,12 @@ import { NavModule } from './components/nav/nav.module';
 import { ComodoModule } from './pages/comodo/comodo.module';
 import { CasaService } from './services/casa.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { InformacoesGeraisModule } from './pages/informacoes-gerais/informacoes-gerais.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfiguracoesComponent,
-    InformacoesGeraisComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     TelaInicialModule,
     MenuPrincipalModule,
     ComodoModule,
-    HttpClientModule
+    HttpClientModule,
+    InformacoesGeraisModule
   ],
   providers: [
     CasaService
