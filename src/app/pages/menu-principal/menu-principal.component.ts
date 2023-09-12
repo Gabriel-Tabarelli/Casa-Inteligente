@@ -15,13 +15,18 @@ export class MenuPrincipalComponent implements OnInit {
   constructor(
     private route: Router,
     private casaService: CasaService
-  ) { }
+  ) { 
+    this.lights = '../../../assets/lampada-on.svg';
+  }
 
 
   casa!: Casa;
   mostrarModal: boolean = false;
+  lights:string;
+
   ngOnInit(): void {
     this.casa = this.casaService.getCasa();
+
   }
   
   //icones

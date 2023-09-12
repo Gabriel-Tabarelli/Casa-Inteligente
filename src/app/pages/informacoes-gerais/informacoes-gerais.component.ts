@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPowerOff,faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
-import { Comodo } from 'src/app/models/comodo';
 import { CasaService } from 'src/app/services/casa.service';
 
 
@@ -11,7 +10,7 @@ import { CasaService } from 'src/app/services/casa.service';
   styleUrls: ['./informacoes-gerais.component.css']
 })
 export class InformacoesGeraisComponent implements OnInit {
-  faLightbulb = faLightbulb;
+  
 
   constructor(private casaService: CasaService) {
 
@@ -23,44 +22,45 @@ export class InformacoesGeraisComponent implements OnInit {
  
 
   }
-  faPowerOff = faPowerOff;
+  // faLightbulb = faLightbulb;
+  // faPowerOff = faPowerOff;
 
-  desligaTodasLampadas() {
-    this.casa.comodos.forEach(comodo => {
-      comodo.dispositivos.forEach(dispositivo => {
-        dispositivo.estado = false;
-      });
-    });
-    this.updateCasa();
-  }
+  // desligaTodasLampadas() {
+  //   this.casa.comodos.forEach(comodo => {
+  //     comodo.dispositivos.forEach(dispositivo => {
+  //       dispositivo.estado = false;
+  //     });
+  //   });
+  //   this.updateCasa();
+  // }
 
-  ligaTodasLampadas() {
-    this.casa.comodos.forEach(comodo => {
-      comodo.dispositivos.forEach(dispositivo => {
-        dispositivo.estado = true;
-      });
-    });
-    this.updateCasa();
-  }
+  // ligaTodasLampadas() {
+  //   this.casa.comodos.forEach(comodo => {
+  //     comodo.dispositivos.forEach(dispositivo => {
+  //       dispositivo.estado = true;
+  //     });
+  //   });
+  //   this.updateCasa();
+  // }
 
-  validaLampadas(): boolean {
-    return this.casa.comodos.some(comodo => this.validaDispositivos(comodo));
-  }
+  // validaLampadas(): boolean {
+  //   return this.casa.comodos.some(comodo => this.validaDispositivos(comodo));
+  // }
 
-  validaDispositivos(comodo: Comodo):boolean{
-    return comodo.dispositivos.some((dispositivo) => dispositivo.estado);
-  }
+  // validaDispositivos(comodo: Comodo):boolean{
+  //   return comodo.dispositivos.some((dispositivo) => dispositivo.estado);
+  // }
 
-  mudaEstadoLampada(comodo:Comodo) {
-   comodo.dispositivos.forEach(dispositivo => {
-        dispositivo.estado = !dispositivo.estado;
-      });
+  // mudaEstadoLampada(comodo:Comodo) {
+  //  comodo.dispositivos.forEach(dispositivo => {
+  //       dispositivo.estado = !dispositivo.estado;
+  //     });
     
-    this.updateCasa();
+  //   this.updateCasa();
 
-  }
+  // }
 
-  updateCasa(): void {
-    this.casaService.updateCasa(this.casa);
-  }
+  // updateCasa(): void {
+  //   this.casaService.updateCasa(this.casa);
+  // }
 }

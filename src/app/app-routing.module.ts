@@ -28,11 +28,6 @@ const routes: Route[] = [
     canActivate: [AuthGuard]
   },
   {
-    path: "informacoes-gerais",
-    component: InformacoesGeraisComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: "",
     pathMatch: "full",
     redirectTo: "tela-inicial",
