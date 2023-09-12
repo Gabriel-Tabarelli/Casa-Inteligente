@@ -19,6 +19,7 @@ export class MenuPrincipalComponent implements OnInit {
 
 
   casa!: Casa;
+  mostrarModal: boolean = false;
   ngOnInit(): void {
     this.casa = this.casaService.getCasa();
   }
@@ -37,8 +38,8 @@ export class MenuPrincipalComponent implements OnInit {
     this.route.navigate(['comodo']);
   }
 
-  mudaRota(){
-    this.route.navigate(['informacoes-gerais'])
+  mudaEstadoModal(): void{
+   this.mostrarModal = !this.mostrarModal;
   }
 
   desligaTodasLampadas() {
