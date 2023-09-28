@@ -10,11 +10,12 @@
     </div>
     <div class="grid row-span-6 w-full h-full p-12">
         <div *ngFor="let nome of listaConfiguracoes" class="text-corPrimaria flex w-full justify-between text-xl">
+            <div *ngIf="nome == 'Sair'" (click)="sair()" class="w-full h-full flex items-center justify-between">
             <p>{{nome}}</p>
-            <div *ngIf="nome == 'Sair'" (click)="sair()">
                 <fa-icon [icon]="faSignOut" class="text-corPrimaria grid items-center justify-end"></fa-icon>
             </div>
-            <div *ngIf="nome != 'Sair'">
+            <div *ngIf="nome != 'Sair'" class="w-full h-full flex items-center justify-between">
+                <p>{{nome}}</p>
                 <div class="text-corPrimaria grid items-center justify-end">></div>
             </div>
         </div>
