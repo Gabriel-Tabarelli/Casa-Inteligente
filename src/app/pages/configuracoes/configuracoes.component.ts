@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faHouseChimneyUser, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import {faHouseChimneyUser, faSignOut} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-configuracoes',
@@ -17,7 +17,7 @@ export class ConfiguracoesComponent implements OnInit {
    
   //icones
    faHouseChimneyUser= faHouseChimneyUser;
-   faRightFromBracket = faRightFromBracket;
+   faSignOut = faSignOut;
 
    listaConfiguracoes : String[] = ["Linguagem", "Acessibilidade", "Dispositivos", "Rede" , "Escanear Casa", "Sair"]
    

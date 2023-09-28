@@ -19,6 +19,6 @@ export class NavComponent{
     this.route.navigate(['/']);
   }
   configuracoes():void{
-    this.route.navigate(['/settings']);
+    this.route.navigate(['/configuracoes']);
   }
 }

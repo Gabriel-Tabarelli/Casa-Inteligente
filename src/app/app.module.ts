@@ -16,11 +16,11 @@ import { ComodoModule } from './pages/comodo/comodo.module';
 import { CasaService } from './services/casa.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { InformacoesGeraisModule } from './pages/informacoes-gerais/informacoes-gerais.module';
+import { ConfiguracoesModule } from './pages/configuracoes/configuracoes.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ConfiguracoesComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +30,8 @@ import { InformacoesGeraisModule } from './pages/informacoes-gerais/informacoes-
     MenuPrincipalModule,
     ComodoModule,
     HttpClientModule,
-    InformacoesGeraisModule
+    InformacoesGeraisModule,
+    ConfiguracoesModule
   ],
   providers: [
     CasaService

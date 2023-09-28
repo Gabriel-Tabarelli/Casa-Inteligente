@@ -1,19 +1,18 @@
 <header class="flex h-[10%] justify-center w-full">
     <app-nav [tituloPagina]="'Configurações'"></app-nav>
 </header>
-<section class="w-screen h-full grid grid-rows-10 justify-center">
-    <div class=" grid row-span-4 justify-center">
-        <fa-icon [icon]="faHouseChimneyUser" class="text-corPrimaria text-8xl ml-1">
-        </fa-icon>
-        <p class="text-corPrimaria ">
+<section class="w-screen h-full grid grid-rows-10">
+    <div class=" grid w-full h-full  row-span-4 justify-center">
+        <fa-icon [icon]="faHouseChimneyUser" class="text-corPrimaria text-8xl ml-1 flex justify-center"></fa-icon>
+        <p class="text-corPrimaria text-xl">
             Casa de Arlindo
         </p>
     </div>
-    <div class="grid row-span-6">
-        <div *ngFor="let nome of listaConfiguracoes" class="text-corPrimaria grid grid-cols-2">
+    <div class="grid row-span-6 w-full h-full p-12">
+        <div *ngFor="let nome of listaConfiguracoes" class="text-corPrimaria flex w-full justify-between text-xl">
             <p>{{nome}}</p>
-            <div *ngIf="nome == 'Sair'">
-                <fa-icon [icon]="faRightFromBracket" class="text-corPrimaria grid items-center justify-end" (click)="sair()"></fa-icon>
+            <div *ngIf="nome == 'Sair'" (click)="sair()">
+                <fa-icon [icon]="faSignOut" class="text-corPrimaria grid items-center justify-end"></fa-icon>
             </div>
             <div *ngIf="nome != 'Sair'">
                 <div class="text-corPrimaria grid items-center justify-end">></div>
