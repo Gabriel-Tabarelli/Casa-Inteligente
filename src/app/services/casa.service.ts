@@ -28,12 +28,8 @@ export class CasaService implements OnInit {
     return JSON.parse(localStorage.getItem("casa")!);
   }
 
-  // getCasa(): any{
-  //   return JSON.parse(localStorage.getItem('casa'));
-  // }
 
   getCasaAPI(): Casa{
-    // return this.http.get<Casa>('../JSON/casas.json');
 
     return {
       "id": "1",
@@ -119,5 +115,9 @@ export class CasaService implements OnInit {
       "temperaturaGeral" : 27,
       "gas": 27
   };
+  }
+
+  logout() :void{
+    localStorage.clear();
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faHouseChimneyUser, faSignOut} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { CasaService } from 'src/app/services/casa.service';
 @Component({
   selector: 'app-configuracoes',
   templateUrl: './configuracoes.component.html',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ConfiguracoesComponent implements OnInit {
 
-  constructor(private route : Router) { }
+  constructor(private route : Router, private casaService: CasaService) { }
 
   ngOnInit(): void {
     
@@ -22,7 +23,7 @@ export class ConfiguracoesComponent implements OnInit {
    listaConfiguracoes : String[] = ["Linguagem", "Acessibilidade", "Dispositivos", "Rede" , "Escanear Casa", "Sair"]
    
    sair(){
-    localStorage.removeItem("casa");
+    this.casaService.logout();
     this.route.navigate(['/tela-inicial']);
    }
    

@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faBed, faKitchenSet, faGear, faPowerOff, faCouch, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBed,
+  faKitchenSet,
+  faGear,
+  faPowerOff,
+  faCouch,
+  faLightbulb,
+} from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
 import { Comodo } from 'src/app/models/comodo';
 import { CasaService } from 'src/app/services/casa.service';
@@ -8,27 +15,21 @@ import { CasaService } from 'src/app/services/casa.service';
 @Component({
   selector: 'app-menu-principal',
   templateUrl: './menu-principal.component.html',
-  styleUrls: ['./menu-principal.component.css']
+  styleUrls: ['./menu-principal.component.css'],
 })
 export class MenuPrincipalComponent implements OnInit {
-
-  constructor(
-    private route: Router,
-    private casaService: CasaService
-  ) { 
+  constructor(private route: Router, private casaService: CasaService) {
     this.lights = '../../../assets/lampada-on.svg';
   }
 
-
   casa!: Casa;
   mostrarModal: boolean = false;
-  lights:string;
+  lights: string;
 
   ngOnInit(): void {
     this.casa = this.casaService.getCasa();
-
   }
-  
+
   //icones
   faBed = faBed;
   faKitchenSet = faKitchenSet;
@@ -37,19 +38,18 @@ export class MenuPrincipalComponent implements OnInit {
   faPowerOff = faPowerOff;
   faLightbulb = faLightbulb;
 
-
   routerComodo(comodo: Comodo): void {
     localStorage.setItem('comodo', JSON.stringify(comodo));
     this.route.navigate(['comodo']);
   }
 
-  mudaEstadoModal(): void{
-   this.mostrarModal = !this.mostrarModal;
+  mudaEstadoModal(): void {
+    this.mostrarModal = !this.mostrarModal;
   }
 
   desligaTodasLampadas() {
-    this.casa.comodos.forEach(comodo => {
-      comodo.dispositivos.forEach(dispositivo => {
+    this.casa.comodos.forEach((comodo) => {
+      comodo.dispositivos.forEach((dispositivo) => {
         dispositivo.estado = false;
       });
     });
@@ -57,8 +57,8 @@ export class MenuPrincipalComponent implements OnInit {
   }
 
   ligaTodasLampadas() {
-    this.casa.comodos.forEach(comodo => {
-      comodo.dispositivos.forEach(dispositivo => {
+    this.casa.comodos.forEach((comodo) => {
+      comodo.dispositivos.forEach((dispositivo) => {
         dispositivo.estado = true;
       });
     });
@@ -66,20 +66,25 @@ export class MenuPrincipalComponent implements OnInit {
   }
 
   validaLampadas(): boolean {
-    return this.casa.comodos.some(comodo => this.validaDispositivos(comodo));
+    return this.casa.comodos.some((comodo) => this.validaDispositivos(comodo));
   }
 
-  validaDispositivos(comodo: Comodo):boolean{
+  validaDispositivos(comodo: Comodo): boolean {
     return comodo.dispositivos.some((dispositivo) => dispositivo.estado);
   }
 
-  mudaEstadoLampada(comodo:Comodo) {
-   comodo.dispositivos.forEach(dispositivo => {
-        dispositivo.estado = !dispositivo.estado;
+  mudaEstadoLampada(comodo: Comodo) {
+    if (this.validaDispositivos(comodo)) {
+      comodo.dispositivos.forEach((dispositivo) => {
+        dispositivo.estado = false;
       });
-    
-    this.updateCasa();
+    } else {
+      comodo.dispositivos.forEach((dispositivo) => {
+        dispositivo.estado = true;
+      });
+    }
 
+    this.updateCasa();
   }
 
   updateCasa(): void {

@@ -4,7 +4,6 @@ import { TelaInicialComponent } from "./pages/tela-inicial/tela-inicial.componen
 import { MenuPrincipalComponent } from "./pages/menu-principal/menu-principal.component";
 import { ComodoComponent } from "./pages/comodo/comodo.component";
 import { ConfiguracoesComponent } from "./pages/configuracoes/configuracoes.component";
-import { InformacoesGeraisComponent } from "./pages/informacoes-gerais/informacoes-gerais.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Route[] = [
