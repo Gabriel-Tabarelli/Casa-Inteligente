@@ -9,20 +9,20 @@
                     <h3>Informações Gerais</h3>
                 </div>
                 <div class="grid grid-cols-2 w-full h-5/6">
-                    <div class="flex items-center justify-center flex-col">
+                    <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !portao }">
                         Status Portão:
                         <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
-                            <p style="color: green;" *ngIf="casa.portaoEstado">Aberto</p>
-                            <p style="color: red;" *ngIf="!casa.portaoEstado">Fechado</p>
+                            <p style="color: green;" *ngIf="casa.portaoEstado" [ngClass]="{ 'p-div': !portao }">Aberto</p>
+                            <p style="color: red;" *ngIf="!casa.portaoEstado" [ngClass]="{ 'p-div': !portao }">Fechado</p>
                             <fa-icon [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">
                             </fa-icon>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center flex-col">
+                    <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !casa.temperaturaGeral }">
                         Temperatura Geral:
                         <p>{{casa.temperaturaGeral}}°C</p>
                     </div>
-                    <div class="flex items-center justify-center flex-col">
+                    <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !casa.gas }">
                         Gás
                         <mat-progress-bar color mode="determinate" value="{{casa.gas}}"></mat-progress-bar>
                         <p>{{casa.gas}}%</p>

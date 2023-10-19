@@ -21,3 +21,17 @@
     max-height: 80%;
     overflow-y: auto;
 }
+
+.disabled-div{
+    background-color: #f0f0f0; /* Cor de fundo mais clara para indicar desativação */
+  opacity: 0.7; /* Reduz a opacidade para indicar desativação */
+  pointer-events: none; /* Impede eventos do mouse/teclado na div */
+  cursor: not-allowed;
+}
+.p-div{
+    color:grey;
+ /* Cor de fundo mais clara para indicar desativação */
+  opacity: 0.7; /* Reduz a opacidade para indicar desativação */
+  pointer-events: none; /* Impede eventos do mouse/teclado na div */
+  cursor: not-allowed;
+}

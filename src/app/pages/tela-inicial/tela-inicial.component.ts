@@ -1,6 +1,7 @@
 import { CasaService } from 'src/app/services/casa.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Casa } from '../../models/casa';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -12,6 +13,7 @@ export class TelaInicialComponent implements OnInit {
 
   login: string = '';
   senha: string = '';
+  
   ngOnInit(): void {
     if (
       this.casaService.getCasa() != null &&
@@ -29,7 +31,7 @@ export class TelaInicialComponent implements OnInit {
 
       this.showModalMessageGreen = true;
       this.showModalMessageRed = false;
-      this.casaService.setCasa(1);
+      this.casaService.setCasa(0);
       setTimeout(() => {
         this.router.navigate(['/menu-principal']);
       }, 2000);
@@ -38,12 +40,12 @@ export class TelaInicialComponent implements OnInit {
 
       this.showModalMessageGreen = true;
       this.showModalMessageRed = false;
-      this.casaService.setCasa(2);
+      this.casaService.setCasa(1);
       setTimeout(() => {
         this.router.navigate(['/menu-principal']);
       }, 2000);
 
-    }else if(this.login === 'casa2' && this.senha === 'casa2'){
+    }else if(this.login === 'casa3' && this.senha === 'casa3'){
 
       this.showModalMessageGreen = true;
       this.showModalMessageRed = false;
@@ -52,9 +54,11 @@ export class TelaInicialComponent implements OnInit {
         this.router.navigate(['/menu-principal']);
       }, 2000);
     } else {
-      
+
       this.showModalMessageRed = true;
       this.showModalMessageGreen = false;
     }
   }
+
+  
 }
