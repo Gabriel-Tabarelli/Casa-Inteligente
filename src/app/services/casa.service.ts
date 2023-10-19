@@ -66,19 +66,19 @@ export class CasaService implements OnInit {
               "tipo": "Cozinha",
               "dispositivos": [
                   {
-                      "id": "7",
+                      "id": "4",
                       "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "8",
+                      "id": "5",
                       "nome": "Cabeceira",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "9",
+                      "id": "6",
                       "nome": "Lâmpada Principal",
                       "estado": false,
                       "tipo": "Lampada"
@@ -91,19 +91,19 @@ export class CasaService implements OnInit {
               "tipo": "Sala",
               "dispositivos": [
                   {
-                      "id": "10",
+                      "id": "7",
                       "nome": "Lustre",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "11",
+                      "id": "8",
                       "nome": "Luz Rack",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "12",
+                      "id": "9",
                       "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
