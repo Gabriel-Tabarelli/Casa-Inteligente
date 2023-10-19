@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { faPowerOff, faCaretUp, faCaretDown, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Comodo } from 'src/app/models/comodo';
 import { Dispositivo } from 'src/app/models/dispositivos';
+import { LuzRespository } from 'src/app/repositories/luz.repository';
 @Component({
   selector: 'app-comodo',
   templateUrl: './comodo.component.html',
@@ -16,7 +17,7 @@ export class ComodoComponent implements OnInit {
   faLightbulb = faLightbulb;
 
   lights: string;
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private luzRepository : LuzRespository) { 
     this.lights = '../../../assets/lampada-on.svg';
   }
 
@@ -26,8 +27,6 @@ export class ComodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.comodo = JSON.parse(localStorage.getItem('comodo')!);
-    console.log(this.comodo);
-
     if(this.comodo.tipo == 'Quarto'){
       this.tituloPagina = 'Quarto de ' + this.comodo.nome;
     } else{
@@ -36,13 +35,18 @@ export class ComodoComponent implements OnInit {
   }
 
   setLampada(lampada:Dispositivo):void{
-    lampada.estado = !lampada.estado;
+    this.luzRepository.ascenderLampada(parseInt(lampada.id)).subscribe(
+      (value) => {
+        console.log(value);
+        lampada.estado = !lampada.estado;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   ngOnDestroy():void{
     localStorage.removeItem('comodo');
   }
-
-
-
 }

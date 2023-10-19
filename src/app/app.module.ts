@@ -11,6 +11,7 @@ import { ComodoModule } from './pages/comodo/comodo.module';
 import { CasaService } from './services/casa.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfiguracoesModule } from './pages/configuracoes/configuracoes.module';
+import { LuzRespository } from './repositories/luz.repository';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConfiguracoesModule } from './pages/configuracoes/configuracoes.module'
     ConfiguracoesModule
   ],
   providers: [
-    CasaService
+    CasaService,
+    LuzRespository
   ],
   bootstrap: [AppComponent]
 })
