@@ -25,14 +25,34 @@ export class TelaInicialComponent implements OnInit {
   showModalMessageRed: boolean = false;
 
   verificaSenha(): void {
-    if (this.login === 'admin' && this.senha === 'admin') {
+    if (this.login === 'casa1' && this.senha === 'casa1') {
+
       this.showModalMessageGreen = true;
       this.showModalMessageRed = false;
-      this.casaService.setCasa();
+      this.casaService.setCasa(1);
+      setTimeout(() => {
+        this.router.navigate(['/menu-principal']);
+      }, 2000);
+
+    }else if(this.login === 'casa2' && this.senha === 'casa2'){
+
+      this.showModalMessageGreen = true;
+      this.showModalMessageRed = false;
+      this.casaService.setCasa(2);
+      setTimeout(() => {
+        this.router.navigate(['/menu-principal']);
+      }, 2000);
+
+    }else if(this.login === 'casa2' && this.senha === 'casa2'){
+
+      this.showModalMessageGreen = true;
+      this.showModalMessageRed = false;
+      this.casaService.setCasa(2);
       setTimeout(() => {
         this.router.navigate(['/menu-principal']);
       }, 2000);
     } else {
+      
       this.showModalMessageRed = true;
       this.showModalMessageGreen = false;
     }

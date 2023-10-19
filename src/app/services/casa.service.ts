@@ -17,8 +17,8 @@ export class CasaService implements OnInit {
 
   ngOnInit(){}
 
-  setCasa():void{
-    localStorage.setItem("casa", JSON.stringify(this.getCasaAPI()));
+  setCasa(index:number):void{
+    localStorage.setItem("casa", JSON.stringify(this.getCasaAPI(index)));
   }
   updateCasa(casa: Casa):void{
     localStorage.setItem("casa", JSON.stringify(casa));
@@ -27,11 +27,9 @@ export class CasaService implements OnInit {
   getCasa(): Casa{
     return JSON.parse(localStorage.getItem("casa")!);
   }
-
-
-  getCasaAPI(): Casa{
-
-    return {
+  getCasaAPI(index:number): Casa{
+    const casa:Casa[]= [
+      {
       "id": "1",
       "nomeDono": "Arlindo e Maria",
       "comodos": [
@@ -111,11 +109,175 @@ export class CasaService implements OnInit {
               ]
           },
       ],
-      "portaoEstado": false,
-      "temperaturaGeral" : 27,
-      "gas": 27
-  };
+      "portaoEstado": false
+  }, 
+  {
+      "id": "2",
+      "nomeDono": "Genilson",
+      "comodos": [
+          {
+              "id": "1",
+              "nome": "Genilson",
+              "tipo": "Quarto",
+              "dispositivos": [
+                  {
+                      "id": "1",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "2",
+                      "nome": "Cabeceira",
+                      "estado": true,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "3",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+              "id": "2",
+              "nome": "Geral",
+              "tipo": "Cozinha",
+              "dispositivos": [
+                  {
+                      "id": "7",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "8",
+                      "nome": "Cabeceira",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "9",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+            "id": "3",
+              "nome": "Geral",
+              "tipo": "Sala",
+              "dispositivos": [
+                  {
+                      "id": "10",
+                      "nome": "Lustre",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "11",
+                      "nome": "Luz Rack",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "12",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+      ],
+      "portaoEstado": false
+  }, 
+  {
+      "id": "3",
+      "nomeDono": "Pedro",
+      "comodos": [
+          {
+              "id": "1",
+              "nome": "Pedro",
+              "tipo": "Quarto",
+              "dispositivos": [
+                  {
+                      "id": "1",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "2",
+                      "nome": "Cabeceira",
+                      "estado": true,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "3",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+              "id": "2",
+              "nome": "Geral",
+              "tipo": "Cozinha",
+              "dispositivos": [
+                  {
+                      "id": "7",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "8",
+                      "nome": "Cabeceira",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "9",
+                      "nome": "Lâmpada Principal",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+          {
+            "id": "3",
+              "nome": "Geral",
+              "tipo": "Sala",
+              "dispositivos": [
+                  {
+                      "id": "10",
+                      "nome": "Lustre",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "11",
+                      "nome": "Luz Rack",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  },
+                  {
+                      "id": "12",
+                      "nome": "Abajur",
+                      "estado": false,
+                      "tipo": "Lampada"
+                  }
+              ]
+          },
+      ],
+      "portaoEstado": false
   }
+];
+  return casa[index];  
+}
 
   logout() :void{
     localStorage.clear();
