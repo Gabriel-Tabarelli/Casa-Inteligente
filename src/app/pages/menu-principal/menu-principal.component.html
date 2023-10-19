@@ -11,7 +11,7 @@
                 <div class="grid grid-cols-2 w-full h-5/6">
                     <div class="flex items-center justify-center flex-col">
                         Status Portão:
-                        <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
+                        <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6" (click)="mudaEstadoPortao()">
                             <p style="color: green;" *ngIf="casa.portaoEstado">Aberto</p>
                             <p style="color: red;" *ngIf="!casa.portaoEstado">Fechado</p>
                             <fa-icon [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">

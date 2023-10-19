@@ -35,7 +35,7 @@ export class ComodoComponent implements OnInit {
   }
 
   setLampada(lampada:Dispositivo):void{
-    this.luzRepository.ascenderLampada(parseInt(lampada.id)).subscribe(
+    this.luzRepository.mudarLampada(parseInt(lampada.id)).subscribe(
       (value) => {
         console.log(value);
         lampada.estado = !lampada.estado;
