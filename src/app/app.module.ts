@@ -31,7 +31,7 @@ import { PortaoRespository } from './repositories/portao.repository';
   providers: [
     CasaService,
     LuzRespository,
-    PortaoRespository
+    PortaoRespository 
   ],
   bootstrap: [AppComponent]
 })
