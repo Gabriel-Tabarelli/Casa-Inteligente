@@ -11,11 +11,10 @@ const APILINK = "";
 @Injectable({
   providedIn: 'root'
 })
-export class CasaService implements OnInit {
+export class CasaService {
 
   constructor(private http:HttpClient) { }
 
-  ngOnInit(){}
 
   setCasa(index:number):void{
     localStorage.setItem("casa", JSON.stringify(this.getCasaAPI(index)));
