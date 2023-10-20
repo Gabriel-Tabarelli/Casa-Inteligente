@@ -23,13 +23,14 @@
 }
 
 .disabled-div{
-    background-color: #f0f0f0; /* Cor de fundo mais clara para indicar desativação */
+    background-color: #ffffff; /* Cor de fundo mais clara para indicar desativação */
   opacity: 0.7; /* Reduz a opacidade para indicar desativação */
   pointer-events: none; /* Impede eventos do mouse/teclado na div */
   cursor: not-allowed;
+  color: gray;
 }
 .p-div{
-    color:grey;
+    color:gray;
  /* Cor de fundo mais clara para indicar desativação */
   opacity: 0.7; /* Reduz a opacidade para indicar desativação */
   pointer-events: none; /* Impede eventos do mouse/teclado na div */

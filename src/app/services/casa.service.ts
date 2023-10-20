@@ -191,7 +191,7 @@ export class CasaService implements OnInit {
               ]
           },
       ],
-      "portaoEstado": false
+      "temperaturaGeral":25
   }, 
   {
       "id": "3",
@@ -273,7 +273,7 @@ export class CasaService implements OnInit {
               ]
           },
       ],
-      "portaoEstado": false
+      "gas":27
   }
 ];
   return casa[index];  

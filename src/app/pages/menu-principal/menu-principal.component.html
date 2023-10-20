@@ -12,20 +12,25 @@
                     <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !portao }">
                         Status Portão:
                         <div class="flex flex-col bg-corFundoCard rounded-md justify-center items-center w-4/6">
-                            <p style="color: green;" *ngIf="casa.portaoEstado" [ngClass]="{ 'p-div': !portao }">Aberto</p>
-                            <p style="color: red;" *ngIf="!casa.portaoEstado" [ngClass]="{ 'p-div': !portao }">Fechado</p>
-                            <fa-icon [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">
+                            <p style="color: gray;" *ngIf="!portao">-----</p>
+                            <p style="color: green;" *ngIf="casa.portaoEstado && portao">Aberto</p>
+                            <p style="color: red;" *ngIf="!casa.portaoEstado && portao">Fechado</p>
+                            <fa-icon *ngIf="portao" [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">
+                            </fa-icon>
+                            <fa-icon *ngIf="!portao" [icon]="faPowerOff" style="color: grey;">
                             </fa-icon>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !casa.temperaturaGeral }">
+                    <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !temperatura }">
                         Temperatura Geral:
-                        <p>{{casa.temperaturaGeral}}°C</p>
+                        <p *ngIf="temperatura">{{casa.temperaturaGeral}}°C</p>
+                        <p *ngIf="!temperatura">------</p>
                     </div>
                     <div class="flex items-center justify-center flex-col" [ngClass]="{ 'disabled-div': !casa.gas }">
                         Gás
                         <mat-progress-bar color mode="determinate" value="{{casa.gas}}"></mat-progress-bar>
-                        <p>{{casa.gas}}%</p>
+                        <p *ngIf="gas">{{casa.gas}}%</p>
+                        <p *ngIf="!gas">------</p>
                     </div>
                     <div class="flex items-center justify-center flex-col">
                         <button class="w-2/3 bg-corPrimaria text-white shadow-lg rounded-sm"
