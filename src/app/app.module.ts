@@ -12,6 +12,7 @@ import { CasaService } from './services/casa.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfiguracoesModule } from './pages/configuracoes/configuracoes.module';
 import { LuzRespository } from './repositories/luz.repository';
+import { PortaoRespository } from './repositories/portao.repository';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LuzRespository } from './repositories/luz.repository';
   ],
   providers: [
     CasaService,
-    LuzRespository
+    LuzRespository,
+    PortaoRespository 
   ],
   bootstrap: [AppComponent]
 })

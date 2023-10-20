@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
 import { Comodo } from 'src/app/models/comodo';
+import { PortaoRespository } from 'src/app/repositories/portao.repository';
 import { CasaService } from 'src/app/services/casa.service';
 
 @Component({
@@ -18,7 +19,7 @@ import { CasaService } from 'src/app/services/casa.service';
   styleUrls: ['./menu-principal.component.css'],
 })
 export class MenuPrincipalComponent implements OnInit {
-  constructor(private route: Router, private casaService: CasaService) {
+  constructor(private route: Router, private casaService: CasaService, private portaoRepository: PortaoRespository) {
     this.lights = '../../../assets/lampada-on.svg';
   }
 
@@ -49,6 +50,17 @@ export class MenuPrincipalComponent implements OnInit {
 
   mudaEstadoModal(): void {
     this.mostrarModal = !this.mostrarModal;
+  }
+
+  mudaEstadoPortao():void{
+    this.portaoRepository.mudarPortao().subscribe(
+      (value) => {
+        console.log(value);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 
   desligaTodasLampadas() {
