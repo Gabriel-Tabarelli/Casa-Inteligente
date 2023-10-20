@@ -4,9 +4,9 @@ export class Casa {
     id: string;
     nomeDono: string;
     comodos: Comodo[];
-    portaoEstado: boolean;
-    temperaturaGeral: number;
-    gas:number;
+    portaoEstado?: boolean;
+    temperaturaGeral?: number;
+    gas?:number;
 
     constructor(){
         this.id = "";

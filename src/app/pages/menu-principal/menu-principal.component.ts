@@ -26,9 +26,13 @@ export class MenuPrincipalComponent implements OnInit {
   casa!: Casa;
   mostrarModal: boolean = false;
   lights: string;
+  gas: boolean = false;
+  temperatura: boolean = false;
+  portao: boolean = false;
 
   ngOnInit(): void {
     this.casa = this.casaService.getCasa();
+    this.verificaComponentes()
   }
 
   //icones
@@ -101,5 +105,16 @@ export class MenuPrincipalComponent implements OnInit {
 
   updateCasa(): void {
     this.casaService.updateCasa(this.casa);
+  }
+
+  verificaComponentes():void{
+    console.log(this.casa.gas);
+    if(this.casa.gas!=undefined){
+      this.gas=true
+    }else if(this.casa.portaoEstado!=undefined){
+      this.portao=true
+    }else if(this.casa.temperaturaGeral!=undefined){
+      this.temperatura=true
+    }
   }
 }
