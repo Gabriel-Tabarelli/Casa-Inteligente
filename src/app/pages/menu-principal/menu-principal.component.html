@@ -15,7 +15,7 @@
                             <p style="color: gray;" *ngIf="!portao">-----</p>
                             <p style="color: green;" *ngIf="casa.portaoEstado && portao">Aberto</p>
                             <p style="color: red;" *ngIf="!casa.portaoEstado && portao">Fechado</p>
-                            <fa-icon *ngIf="portao" [icon]="faPowerOff" [style.color]="casa.portaoEstado == true ? 'red' : 'green'">
+                            <fa-icon *ngIf="portao" [icon]="faPowerOff" [style.color]="casa.portaoEstado === true ? 'red' : 'green'">
                             </fa-icon>
                             <fa-icon *ngIf="!portao" [icon]="faPowerOff" style="color: grey;">
                             </fa-icon>
@@ -46,17 +46,17 @@
                     <a class="cursor-pointer flex w-full h-full bg-corFundoCard shadow-lg rounded-sm mt-6"
                         (click)="routerComodo(comodo)">
                         <div class="flex w-2/6 h-full justify-center items-center">
-                            <fa-icon *ngIf="comodo.tipo == 'Quarto'" [icon]="faBed" class="text-4xl text-corPrimaria">
+                            <fa-icon *ngIf="comodo.tipo === 'Quarto'" [icon]="faBed" class="text-4xl text-corPrimaria">
                             </fa-icon>
-                            <fa-icon *ngIf="comodo.tipo == 'Cozinha'" [icon]="faKitchenSet"
+                            <fa-icon *ngIf="comodo.tipo === 'Cozinha'" [icon]="faKitchenSet"
                                 class="text-4xl text-corPrimaria"></fa-icon>
-                            <fa-icon *ngIf="comodo.tipo == 'Sala'" [icon]="faCouch" class="text-4xl text-corPrimaria">
+                            <fa-icon *ngIf="comodo.tipo === 'Sala'" [icon]="faCouch" class="text-4xl text-corPrimaria">
                             </fa-icon>
                         </div>
                         <div class="flex w-4/6 h-full items-center">
-                            <p *ngIf="comodo.tipo == 'Quarto'" class="text-corPrimaria text-sm text-left">
+                            <p *ngIf="comodo.tipo === 'Quarto'" class="text-corPrimaria text-sm text-left">
                                 {{comodo.tipo}} de {{comodo.nome}}</p>
-                            <p *ngIf="comodo.tipo != 'Quarto'" class="text-corPrimaria text-sm text-left">
+                            <p *ngIf="comodo.tipo !== 'Quarto'" class="text-corPrimaria text-sm text-left">
                                 {{comodo.tipo}}</p>
                         </div>
                     </a>
@@ -75,14 +75,14 @@
         <div class="grid grid-cols-2 h-[80%] w-full">
             <div class="flex w-full h-full flex-col justify-around items-center">
                 <div class="w-[85%] h-1/4 bg-corFundoCard rounded-lg p-2" *ngFor="let comodo of casa.comodos;">
-                    <div *ngIf="comodo.tipo == 'Quarto'"
+                    <div *ngIf="comodo.tipo === 'Quarto'"
                         class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
                         (click)="mudaEstadoLampada(comodo)">
                         <p class="col-span-5">{{comodo.tipo}}s</p>
                         <p class="text-green-600 col-span-2" *ngIf="validaDispositivos(comodo)">ON</p>
                         <p class="text-red-600  col-span-2" *ngIf="!validaDispositivos(comodo)">OFF</p>
                     </div>
-                    <div *ngIf="comodo.tipo != 'Quarto'"
+                    <div *ngIf="comodo.tipo !== 'Quarto'"
                         class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
                         (click)="mudaEstadoLampada(comodo)">
                         <p class="col-span-5">{{comodo.tipo}}</p>

@@ -10,7 +10,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Casa } from 'src/app/models/casa';
 import { Comodo } from 'src/app/models/comodo';
+import { GasRespository } from 'src/app/repositories/gas.repository';
+import { LuzRespository } from 'src/app/repositories/luz.repository';
 import { PortaoRespository } from 'src/app/repositories/portao.repository';
+import { TemperaturaRespository } from 'src/app/repositories/temperatura.repository';
 import { CasaService } from 'src/app/services/casa.service';
 
 @Component({
@@ -19,7 +22,12 @@ import { CasaService } from 'src/app/services/casa.service';
   styleUrls: ['./menu-principal.component.css'],
 })
 export class MenuPrincipalComponent implements OnInit {
-  constructor(private route: Router, private casaService: CasaService, private portaoRepository: PortaoRespository) {
+  constructor(
+    private route: Router,
+    private casaService: CasaService,
+    private portaoRepository: PortaoRespository,
+    private temperaturaRepository: TemperaturaRespository,
+    private gasRepository: GasRespository) {
     this.lights = '../../../assets/lampada-on.svg';
   }
 
@@ -52,7 +60,7 @@ export class MenuPrincipalComponent implements OnInit {
     this.mostrarModal = !this.mostrarModal;
   }
 
-  mudaEstadoPortao():void{
+  mudaEstadoPortao(): void {
     this.portaoRepository.mudarPortao().subscribe(
       (value) => {
         console.log(value);
@@ -107,14 +115,35 @@ export class MenuPrincipalComponent implements OnInit {
     this.casaService.updateCasa(this.casa);
   }
 
-  verificaComponentes():void{
+  verificaComponentes(): void {
     console.log(this.casa.gas);
-    if(this.casa.gas!=undefined){
-      this.gas=true
-    }else if(this.casa.portaoEstado!=undefined){
-      this.portao=true
-    }else if(this.casa.temperaturaGeral!=undefined){
-      this.temperatura=true
+    if (this.casa.gas != undefined) {
+      this.gas = true
+      this.gasRepository.getGas().subscribe(() =>
+        (value: any) => {
+          this.casa.gas = value;
+          console.log(this.casa.gas);
+          this.casaService.updateCasa(this.casa);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+    if (this.casa.portaoEstado != undefined) {
+      this.portao = true
+    } else if (this.casa.temperaturaGeral != undefined) {
+      this.temperatura = true
+      this.temperaturaRepository.getTemp().subscribe(() =>
+        (value: any) => {
+          this.casa.gas = value;
+          console.log(this.casa.gas);
+          this.casaService.updateCasa(this.casa);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
   }
 }

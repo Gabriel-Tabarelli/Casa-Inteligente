@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faPowerOff, faCaretUp, faCaretDown, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Comodo } from 'src/app/models/comodo';
@@ -9,7 +9,7 @@ import { LuzRespository } from 'src/app/repositories/luz.repository';
   templateUrl: './comodo.component.html',
   styleUrls: ['./comodo.component.css']
 })
-export class ComodoComponent implements OnInit {
+export class ComodoComponent implements OnInit, OnDestroy {
 
   faPowerOff = faPowerOff;
   faCaretDown = faCaretDown;

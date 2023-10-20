@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Casa } from "../models/casa";
 
-const API_URL = "http://localhost:3000/api/casa/1";
+const API_URL = "https://casa-inteligente-api.vercel.app/api/casa/1";
 
 @Injectable()
 export class PortaoRespository {

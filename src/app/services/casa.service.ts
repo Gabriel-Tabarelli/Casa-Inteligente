@@ -48,12 +48,6 @@ export class CasaService {
                       "nome": "Cabeceira",
                       "estado": true,
                       "tipo": "Lampada"
-                  },
-                  {
-                      "id": "3",
-                      "nome": "Lâmpada Principal",
-                      "estado": false,
-                      "tipo": "Lampada"
                   }
               ]
           },
@@ -63,20 +57,14 @@ export class CasaService {
               "tipo": "Cozinha",
               "dispositivos": [
                   {
-                      "id": "4",
+                      "id": "1",
                       "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "5",
+                      "id": "2",
                       "nome": "Cabeceira",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "6",
-                      "nome": "Lâmpada Principal",
                       "estado": false,
                       "tipo": "Lampada"
                   }
@@ -88,20 +76,14 @@ export class CasaService {
               "tipo": "Sala",
               "dispositivos": [
                   {
-                      "id": "7",
+                      "id": "1",
                       "nome": "Lustre",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "8",
+                      "id": "2",
                       "nome": "Luz Rack",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "9",
-                      "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   }
@@ -130,12 +112,6 @@ export class CasaService {
                       "nome": "Cabeceira",
                       "estado": true,
                       "tipo": "Lampada"
-                  },
-                  {
-                      "id": "3",
-                      "nome": "Lâmpada Principal",
-                      "estado": false,
-                      "tipo": "Lampada"
                   }
               ]
           },
@@ -145,20 +121,14 @@ export class CasaService {
               "tipo": "Cozinha",
               "dispositivos": [
                   {
-                      "id": "7",
+                      "id": "3",
                       "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "8",
+                      "id": "4",
                       "nome": "Cabeceira",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "9",
-                      "nome": "Lâmpada Principal",
                       "estado": false,
                       "tipo": "Lampada"
                   }
@@ -170,20 +140,14 @@ export class CasaService {
               "tipo": "Sala",
               "dispositivos": [
                   {
-                      "id": "10",
+                      "id": "5",
                       "nome": "Lustre",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "11",
+                      "id": "6",
                       "nome": "Luz Rack",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "12",
-                      "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   }
@@ -212,12 +176,6 @@ export class CasaService {
                       "nome": "Cabeceira",
                       "estado": true,
                       "tipo": "Lampada"
-                  },
-                  {
-                      "id": "3",
-                      "nome": "Lâmpada Principal",
-                      "estado": false,
-                      "tipo": "Lampada"
                   }
               ]
           },
@@ -227,20 +185,14 @@ export class CasaService {
               "tipo": "Cozinha",
               "dispositivos": [
                   {
-                      "id": "7",
+                      "id": "3",
                       "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "8",
+                      "id": "4",
                       "nome": "Cabeceira",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "9",
-                      "nome": "Lâmpada Principal",
                       "estado": false,
                       "tipo": "Lampada"
                   }
@@ -252,20 +204,14 @@ export class CasaService {
               "tipo": "Sala",
               "dispositivos": [
                   {
-                      "id": "10",
+                      "id": "5",
                       "nome": "Lustre",
                       "estado": false,
                       "tipo": "Lampada"
                   },
                   {
-                      "id": "11",
+                      "id": "6",
                       "nome": "Luz Rack",
-                      "estado": false,
-                      "tipo": "Lampada"
-                  },
-                  {
-                      "id": "12",
-                      "nome": "Abajur",
                       "estado": false,
                       "tipo": "Lampada"
                   }

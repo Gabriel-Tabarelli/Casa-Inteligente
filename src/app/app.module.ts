@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfiguracoesModule } from './pages/configuracoes/configuracoes.module';
 import { LuzRespository } from './repositories/luz.repository';
 import { PortaoRespository } from './repositories/portao.repository';
+import { GasRespository } from './repositories/gas.repository';
+import { TemperaturaRespository } from './repositories/temperatura.repository';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PortaoRespository } from './repositories/portao.repository';
   providers: [
     CasaService,
     LuzRespository,
-    PortaoRespository 
+    PortaoRespository,
+    GasRespository,
+    TemperaturaRespository
   ],
   bootstrap: [AppComponent]
 })
