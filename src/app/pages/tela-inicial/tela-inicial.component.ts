@@ -54,7 +54,6 @@ export class TelaInicialComponent implements OnInit {
         this.router.navigate(['/menu-principal']);
       }, 2000);
     } else {
-
       this.showModalMessageRed = true;
       this.showModalMessageGreen = false;
     }
