@@ -72,25 +72,7 @@
             <span class="flex pl-5">Lâmpadas</span>
             <a class="flex pr-5 text-2xl" (click)="mudaEstadoModal()">X</a>
         </div>
-        <div class="grid grid-cols-2 h-[80%] w-full">
-            <div class="flex w-full h-full flex-col justify-around items-center">
-                <div class="w-[85%] h-1/4 bg-corFundoCard rounded-lg p-2" *ngFor="let comodo of casa.comodos;">
-                    <div *ngIf="comodo.tipo === 'Quarto'"
-                        class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
-                        (click)="mudaEstadoLampada(comodo)">
-                        <p class="col-span-5">{{comodo.tipo}}s</p>
-                        <p class="text-green-600 col-span-2" *ngIf="validaDispositivos(comodo)">ON</p>
-                        <p class="text-red-600  col-span-2" *ngIf="!validaDispositivos(comodo)">OFF</p>
-                    </div>
-                    <div *ngIf="comodo.tipo !== 'Quarto'"
-                        class="grid grid-cols-7 gap-3 text-corPrimaria text-sm text-left items-center w-full h-full"
-                        (click)="mudaEstadoLampada(comodo)">
-                        <p class="col-span-5">{{comodo.tipo}}</p>
-                        <p class="text-green-600 col-span-2" *ngIf="validaDispositivos(comodo)">ON</p>
-                        <p class="text-red-600  col-span-2" *ngIf="!validaDispositivos(comodo)">OFF</p>
-                    </div>
-                </div>
-            </div>
+        <div class="flex h-[80%] w-full">
             <div class="flex flex-col items-center justify-center h-9/10 w-full">
                 <div class="flex h-[80%] w-full justify-center">
                     <img [src]="lights" *ngIf="validaLampadas()" (click)="desligaTodasLampadas()" class="w-[50%] h-auto">

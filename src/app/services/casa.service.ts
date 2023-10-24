@@ -46,7 +46,7 @@ export class CasaService {
                   {
                       "id": "2",
                       "nome": "Cabeceira",
-                      "estado": true,
+                      "estado": false,
                       "tipo": "Lampada"
                   }
               ]
@@ -110,7 +110,7 @@ export class CasaService {
                   {
                       "id": "2",
                       "nome": "Cabeceira",
-                      "estado": true,
+                      "estado": false,
                       "tipo": "Lampada"
                   }
               ]
@@ -174,7 +174,7 @@ export class CasaService {
                   {
                       "id": "2",
                       "nome": "Cabeceira",
-                      "estado": true,
+                      "estado": false,
                       "tipo": "Lampada"
                   }
               ]
