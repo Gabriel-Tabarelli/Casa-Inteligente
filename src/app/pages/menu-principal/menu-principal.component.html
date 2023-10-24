@@ -75,10 +75,10 @@
         <div class="flex h-[80%] w-full">
             <div class="flex flex-col items-center justify-center h-9/10 w-full">
                 <div class="flex h-[80%] w-full justify-center">
-                    <img [src]="lights" *ngIf="validaLampadas()" (click)="desligaTodasLampadas()" class="w-[50%] h-auto">
+                    <img [src]="lights" *ngIf="validaLampadas()" (click)="mudaTodasLampadas('desligar', false)" class="w-[50%] h-auto">
                     <div class="flex justify-center items-center" *ngIf="!validaLampadas()" >
                         <fa-icon [icon]="faLightbulb" class="text-8xl text-gray-400"
-                            (click)="ligaTodasLampadas()"></fa-icon>
+                            (click)="mudaTodasLampadas('ligar', true)"></fa-icon>
                     </div>
                 </div>
                 <div class="text-white flex justify-center h-[20%] w-full">

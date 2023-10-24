@@ -27,7 +27,8 @@ export class MenuPrincipalComponent implements OnInit {
     private casaService: CasaService,
     private portaoRepository: PortaoRespository,
     private temperaturaRepository: TemperaturaRespository,
-    private gasRepository: GasRespository) {
+    private gasRepository: GasRespository,
+    private luzRepository: LuzRespository) {
     this.lights = '../../../assets/lampada-on.svg';
   }
 
@@ -40,7 +41,7 @@ export class MenuPrincipalComponent implements OnInit {
 
   ngOnInit(): void {
     this.casa = this.casaService.getCasa();
-    this.verificaComponentes()
+    this.verificaComponentes();
   }
 
   //icones
@@ -71,22 +72,21 @@ export class MenuPrincipalComponent implements OnInit {
     )
   }
 
-  desligaTodasLampadas() {
-    this.casa.comodos.forEach((comodo) => {
-      comodo.dispositivos.forEach((dispositivo) => {
-        dispositivo.estado = false;
-      });
-    });
-    this.updateCasa();
-  }
-
-  ligaTodasLampadas() {
-    this.casa.comodos.forEach((comodo) => {
-      comodo.dispositivos.forEach((dispositivo) => {
-        dispositivo.estado = true;
-      });
-    });
-    this.updateCasa();
+  mudaTodasLampadas(acao:string, estado:boolean) {
+    this.luzRepository.mudarTodas(acao).subscribe(
+      (value) => {
+        console.log(value);
+        this.casa.comodos.forEach((comodo) => {
+          comodo.dispositivos.forEach((dispositivo) => {
+            dispositivo.estado = estado;
+          });
+        });
+        this.updateCasa();
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 
   validaLampadas(): boolean {
@@ -97,19 +97,6 @@ export class MenuPrincipalComponent implements OnInit {
     return comodo.dispositivos.some((dispositivo) => dispositivo.estado);
   }
 
-  mudaEstadoLampada(comodo: Comodo) {
-    if (this.validaDispositivos(comodo)) {
-      comodo.dispositivos.forEach((dispositivo) => {
-        dispositivo.estado = false;
-      });
-    } else {
-      comodo.dispositivos.forEach((dispositivo) => {
-        dispositivo.estado = true;
-      });
-    }
-
-    this.updateCasa();
-  }
 
   updateCasa(): void {
     this.casaService.updateCasa(this.casa);
