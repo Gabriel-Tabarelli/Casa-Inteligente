@@ -44,13 +44,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -63,13 +63,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -82,13 +82,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Lustre",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Luz Rack",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -108,13 +108,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -127,13 +127,13 @@ export class CasaService {
                             {
                                 "id": "3",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "4",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -146,13 +146,13 @@ export class CasaService {
                             {
                                 "id": "5",
                                 "nome": "Lustre",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "6",
                                 "nome": "Luz Rack",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -172,13 +172,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -191,13 +191,13 @@ export class CasaService {
                             {
                                 "id": "3",
                                 "nome": "Abajur",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "4",
                                 "nome": "Cabeceira",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -210,13 +210,13 @@ export class CasaService {
                             {
                                 "id": "5",
                                 "nome": "Lustre",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "6",
                                 "nome": "Luz Rack",
-                                "estado": true,
+                                "estado": false,
                                 "tipo": "Lampada"
                             }
                         ]
