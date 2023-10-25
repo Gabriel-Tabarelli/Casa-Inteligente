@@ -44,13 +44,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -63,13 +63,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -82,19 +82,19 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Lustre",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Luz Rack",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
                     },
                 ],
-                "portaoEstado": false
+                
             },
             {
                 "id": "2",
@@ -108,13 +108,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -127,13 +127,13 @@ export class CasaService {
                             {
                                 "id": "3",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "4",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -146,19 +146,19 @@ export class CasaService {
                             {
                                 "id": "5",
                                 "nome": "Lustre",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "6",
                                 "nome": "Luz Rack",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
                     },
                 ],
-                "temperaturaGeral": 25
+               
             },
             {
                 "id": "3",
@@ -172,13 +172,13 @@ export class CasaService {
                             {
                                 "id": "1",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "2",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -191,13 +191,13 @@ export class CasaService {
                             {
                                 "id": "3",
                                 "nome": "Abajur",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "4",
                                 "nome": "Cabeceira",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
@@ -210,19 +210,19 @@ export class CasaService {
                             {
                                 "id": "5",
                                 "nome": "Lustre",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             },
                             {
                                 "id": "6",
                                 "nome": "Luz Rack",
-                                "estado": false,
+                                "estado": true,
                                 "tipo": "Lampada"
                             }
                         ]
                     },
                 ],
-                "gas": 27
+                
             }
         ];
         return casa[index];
